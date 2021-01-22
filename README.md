@@ -46,10 +46,10 @@ The "day" is already an "Acceptable non-SI unit" in the "International System of
 A milliday is similar to a minute. One day has 1440 minutes or 1000 millidays.  
 This means that 1 milliday = 1.44 minutes and 1 minute = 0.69444 millidays.  
 We could approximate it for easy mental calculations 1 milliday approx. 1.5 minute and 1 minute approx. 0.66 millidays.
-We don't really need hours. They are redundant and relics from the past. We could use millidays instead of hours in any scenario: 1 hour = 41.66 millidays  
+We don't really need hours. They are redundant and relics from the past. We could use millidays instead of hours in any scenario: 1 hour = 41.66 millidays.  
 In the distant past humans were not accustomed to bigger numbers than 60. But today we use bigger numbers in everyday life. At least for money counting. Who doesn't know how to count to 1000 dollars?  
 For most practical scenarios it is enough to define time with precisions rounded to 1 minute or 1 milliday.  
-This is the formula: millidays = 1000/24\*hours + 1000/(24\*60)\*minutes
+This is the formula: millidays = 1000/24\*hours + 1000/(24\*60)\*minutes  
 The pronunciation is very similar to what is called "military time" in english.  
 People will probably shorten millidays to simply "millis".
 
@@ -84,14 +84,15 @@ For very precise measurements today we use seconds and decimals of a second.
 With millidays we can just use decimals of a milliday.  
 milliseconds, nanoseconds,... can be converted into microdays, nanodays, picodays,... just follow the SI rules and use what is convenient.  
 This is the formula: millidays = 1000/(24\*60\*60)\*seconds
+Probably people will shorten microdays to "micros".
 
-| old seconds     | new milliday |
-| :-------------- | :----------: |
-| 1 s             | 0.012 md     |
-| 10 s            | 0.116 md     |
-| 10.44 s         | 0.120833 md  |
-| 30 s            | 0.347 md     |
-| 60 s            | 0.694 md     |
+| old seconds     | new milliday | new microdays |
+| --------------: | -----------: | ------------: |
+| 1 s             | 0.012 md     | 12 microdays  |
+| 10 s            | 0.116 md     | 116 μd        |
+| 10.44 s         | 0.120833 md  | 120.833 μd    |
+| 30 s            | 0.347 md     | 347 μd        |
+| 60 s            | 0.694 md     | 694 μd        |
 
 The "second" is the base unit of time in the International System of Units (SI). This is unfortunate. It will probably never change.  
 The "second" is defined by taking the fixed numerical value of the caesium frequency ∆νCs, the unperturbed ground-state hyperfine transition frequency of the caesium-133 atom, to be 9192631770 when expressed in the unit Hz.  
@@ -102,15 +103,15 @@ One year has approximately 365 days that are divided into 12 months.
 Because Earths revolution around the Sun is not exact, we have to add one day every 4 years, except every 100 years, except again every 400 years.  
 Confusing? Yes it is.  
 The universe doesn't play nice with our human perceptions and simplifications. If you ask an astronomer it is even more complicated than that. We just made some super simple rules. Out of ignorance in the archaic old times. We know better now.  
-It is impossible to use the metric system and divide a year into 100 days. We need to follow the natural revolution of our planet. That makes sense.
+It is impossible to use the metric system and divide a year into 100 days. We need to follow the natural revolution of our planet. That makes sense.  
 Months are a historic mess because humans gained more knowledge over time. From the humble starts when the divine ideal of 360 days was divided into 12 months we came finally to this mess: we have months with 30 and 31 days and one exceptional february with 28 or 29 days. Confusing and not necessary.  
 There exists also weeks of 7 days. In history there was an attempt to change it to 10 days, but it failed because of human inability to change basic daily routines and rhythms. So we will sadly leave it to 7 days.  
-Every month and every year starts with a different weekday and we need a new calendar every year. That is just comical.
+Every month and every year starts with a different weekday and we need a new calendar every year. That is just comical.  
 In the old times months where important for the farmers (95% of the population) to work in the fields. Today the farmers are only 3% of the population. Life and business does not depend on "months" anymore. It is a standard in the big industry to plan, work and communicate in "weeks". And this is smart.  
 Let abolish months altogether. There are 52 full weeks in a year, that makes 364 days. Every year, there is 1 day left except every 4 year are 2 days except every 100 are again 1 day and every 400 years 2 days. What to do with this 1 or 2 days at the end of the year?  
 CELEBRATION DAYS ! Let celebrate the new year !  
 Sometimes for one day and sometimes for 2 days. Most people already celebrates New Years Eve in this fashion.  
-This means that every year will start with a monday. Forever. No need for a new calendar. 52 full weeks always the same. Simple.
+This means that every year will start with a monday. Forever. No need for a new calendar. 52 full weeks always the same.   Simple.  
 We need to make new ideas to be global, international and computer friendly. Forget about the old cultural differences that caused a lot of problems.  
 First we need a new name because week has constantly 7 days. The new word should be "fullweek" abbreviated to "fw".  It starts working on monday and ends sunday to rest after a week of work.  
 Quarters for business reports are very easily calculated: 52 fullweeks / 4 = 13 fullweeks per quarter.  
