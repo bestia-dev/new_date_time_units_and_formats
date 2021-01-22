@@ -7,7 +7,7 @@
       <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
       <meta name="Description" content="tutorial for a minimal example of rust wasm PWA">
       <meta name="author" content="https://github.com/LucianoBestia/new_date_time_units_and_formats">
-      <meta name="viewport" content="width = device-width,initial-scale = 1.0" />
+      <meta name="viewport" content="width = device-width,initial-scale = 1.0, height: device-height" />
       <link rel="stylesheet" href="css/new_date_time_units_and_formats.css">
 
       <!-- region: A lot of metadata just for PWA -->
@@ -37,7 +37,7 @@
       
 </head>
 
-<body>
+<body >
       <!-- a standard service worker is a must for PWA -->
       <script src="start_service_worker.js"></script>
       <!-- warning if javascript iis not enabled -->
@@ -50,17 +50,41 @@
                   enabled<br>
                   !!!???!!!</h2>
       </noscript>
-      <!-- display a text while waiting for wasm download. 
-      This content will change from the wasm code.-->
-      <div id="div_for_wasm_html_injecting">
-            <h2>
-                  Waiting to<br>
-                  download <br>
-                  the web app...<br>
-                  This is <br>
-                  very quick on fast<br>
-                  networks...<br>
-            </h2>
+      <!--This content will change from the wasm code.-->
+      <div id="div_for_content" style="height: 100vh;" >
+            <div class="div_css_grid" style="grid-template-columns: 100vw; grid-template-rows: 9vh 15vh 12vh 15vh 48vh;">
+                  <div id="div_title">new date and time converter</div>
+                  <div id="div_input" >1.1.2021 18:00</div>
+                  <div id="div_toolbar">reverse</div>
+                  <div id="div_output">2021c01w1d 375md</div>
+
+                  <div class="div_css_grid" style="grid-template-columns: 20vw 20vw 20vw 20vw 20vw ;grid-template-rows: 12vh 12vh 12vh 12vh;">
+                        <div id="div_7" class="div_numeric_pad_cell" >7</div>
+                        <div id="div_8" class="div_numeric_pad_cell" >8</div>
+                        <div id="div_9" class="div_numeric_pad_cell" >9</div>
+                        <div id="div_B" class="div_numeric_pad_cell" style="background-color:darkslategray;" >B</div>
+                        <div id="div_C" class="div_numeric_pad_cell" style="background-color:darkslategray;">C</div>
+
+                        <div id="div_4" class="div_numeric_pad_cell" >4</div>
+                        <div id="div_5" class="div_numeric_pad_cell" >5</div>
+                        <div id="div_6" class="div_numeric_pad_cell" >6</div>
+                        <div id="div_plus" class="div_numeric_pad_cell" >+</div>
+                        <div id="div_minus" class="div_numeric_pad_cell" >-</div>
+
+                        <div id="div_1" class="div_numeric_pad_cell" >1</div>
+                        <div id="div_2" class="div_numeric_pad_cell" >2</div>
+                        <div id="div_3" class="div_numeric_pad_cell" >3</div>
+                        <div id="div_multiply" class="div_numeric_pad_cell" >x</div>
+                        <div id="div_divide" class="div_numeric_pad_cell" >/</div>
+
+                        <div id="div_0" class="div_numeric_pad_cell" >0</div>
+                        <div id="div_dot" class="div_numeric_pad_cell" >.</div>
+                        <div id="div_plus_minus" class="div_numeric_pad_cell" >+-</div>
+                        <div id="div_percent" class="div_numeric_pad_cell" >%</div>
+                        <div id="div_equal" class="div_numeric_pad_cell"style="background-color:darkslategray;" >=</div>
+
+                  </div>
+            </div>
       </div>
       <!-- import and init the wasm code -->
       <script type="module">

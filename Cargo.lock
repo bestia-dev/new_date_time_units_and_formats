@@ -60,7 +60,7 @@ dependencies = [
 
 [[package]]
 name = "new_date_time_units_and_formats"
-version = "2020.1217.1639"
+version = "2021.122.1657"
 dependencies = [
  "console_error_panic_hook",
  "js-sys",

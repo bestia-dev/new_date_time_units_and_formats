@@ -1,6 +1,6 @@
 [package]
 name = "new_date_time_units_and_formats"
-version = "2020.1217.1639"
+version = "2021.122.1657"
 authors = ["Luciano Bestia <Luciano.Bestia@gmail.com>"]
 edition = "2018"
 description = "my proposal for a new date time units and formats"
@@ -8,7 +8,7 @@ repository = "https://github.com/LucianoBestia/new_date_time_units_and_formats"
 readme = "README.md"
 license = "MIT"
 keywords = ["wasm"]
-categories = ["learning"]
+categories = ["date-and-time"]
 publish = false
 
 [lib]

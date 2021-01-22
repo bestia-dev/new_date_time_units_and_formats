@@ -4,9 +4,9 @@
 // install event and force previously cached
 // resources to be cached again.
 // but the new service worker will not be activated until all 
-//tabs with this webapp are closed.
+// tabs with this webapp are closed.
 
-const CACHE_NAME = "2020.1217.1639";
+const CACHE_NAME = '2020.1217.1639';
 
 self.addEventListener("install", event => {
     console.log("event install ", CACHE_NAME);
