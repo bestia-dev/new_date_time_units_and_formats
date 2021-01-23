@@ -1,7 +1,25 @@
+/* css variables */  
+:root {
+    /* color palette */
+    /* use of variables: var(--color_tooltip_1); */
+    /* background color */
+    --b_color_body: #1f351b;
+    --b_color_title: #8BC24A;
+    --b_color_input_output: #FAFAFA;
+    --b_color_toolbar: #F1F7E9;
+    --b_color_cell:#F1F7E9;
+    --b_color_cell_commands:#DDEDC8;
+    /* front color */
+    --f_color_body: #4D4D4D;
+    --f_color_title: #FEFFFB;
+    /* border color*/
+    --brd_color_grid: #82AE4D;
+}
+
 html { 
     font-family: sans-serif;
-    background-color: #000000;
-    color: #FBF462;
+    background-color: var(--b_color_body);
+    color: var(--f_color_body);
     height: 100vh;
 }
 
@@ -13,19 +31,21 @@ body {
 
 #div_title{
     font-size: 20px;
-    background-color:darkslategray;
+    background-color:var(--b_color_title);
+    color:var(--f_color_title);
     line-height: 9vh;
     padding-left: 3vw;
+
 }
 #div_input{
     font-size: 30px;
     line-height: 15vh;
     padding-left: 3vw;
-    background-color: darkslateblue;
+    background-color: var(--b_color_input_output);
 }
 #div_toolbar{
     font-size: 20px;
-    background-color:mediumseagreen;
+    background-color:var(--b_color_toolbar);
     line-height: 12vh;
     padding-left: 3vw;
 }
@@ -33,7 +53,7 @@ body {
     font-size: 30px;
     line-height: 15vh;
     padding-left: 3vw;
-    background-color: darkslateblue;
+    background-color: var(--b_color_input_output);
 }
 /* using simple css-grid for the layout of the grid */
 .div_css_grid {
@@ -41,14 +61,40 @@ body {
     width:100vw;
 }
 
-.div_numeric_pad_cell {
+.div_cell {
     text-align: center;
     line-height: 12vh;
+    background-color:var(--b_color_cell);
     border-top: 1px;
     border-bottom: 0px;
     border-left: 0px;
     border-right: 1px;
     border-style: solid;
-    border-color: aquamarine;
+    border-color: var(--brd_color_grid);
     font-size: 36px;
+}
+
+.cell_commands{
+    background-color:var(--b_color_cell_commands);
+}
+
+.w3-modal{
+    z-index:3;
+    display:none;
+    padding-top:10vh;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    overflow:auto;
+    /*opacity*/
+    background-color:rgba(0,0,0,0.7)
+}
+.w3-modal-content{
+    margin:auto;
+    background-color:#fff;
+    position:relative;
+    padding:5vw;
+    outline:0;
 }

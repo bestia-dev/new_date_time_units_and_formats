@@ -7,7 +7,7 @@
       <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
       <meta name="Description" content="tutorial for a minimal example of rust wasm PWA">
       <meta name="author" content="https://github.com/LucianoBestia/new_date_time_units_and_formats">
-      <meta name="viewport" content="width = device-width,initial-scale = 1.0, height: device-height" />
+      <meta name="viewport" content="width = device-width,initial-scale = 1.0" />
       <link rel="stylesheet" href="css/new_date_time_units_and_formats.css">
 
       <!-- region: A lot of metadata just for PWA -->
@@ -53,36 +53,69 @@
       <!--This content will change from the wasm code.-->
       <div id="div_for_content" style="height: 100vh;" >
             <div class="div_css_grid" style="grid-template-columns: 100vw; grid-template-rows: 9vh 15vh 12vh 15vh 48vh;">
-                  <div id="div_title">new date and time converter</div>
-                  <div id="div_input" >1.1.2021 18:00</div>
-                  <div id="div_toolbar">reverse</div>
-                  <div id="div_output">2021c01w1d 375md</div>
+                  <div id="div_title"><span>new date and time converter</span>
+                        <span id="span_menu" style="float:right;padding-right: 5vw;">☰</span></div>
+                  <div id="div_input" ></div>
+                  <div id="div_toolbar">yyyy-mm-dd ---> fw</div>
+                  <div id="div_output"></div>
 
-                  <div class="div_css_grid" style="grid-template-columns: 20vw 20vw 20vw 20vw 20vw ;grid-template-rows: 12vh 12vh 12vh 12vh;">
-                        <div id="div_7" class="div_numeric_pad_cell" >7</div>
-                        <div id="div_8" class="div_numeric_pad_cell" >8</div>
-                        <div id="div_9" class="div_numeric_pad_cell" >9</div>
-                        <div id="div_B" class="div_numeric_pad_cell" style="background-color:darkslategray;" >B</div>
-                        <div id="div_C" class="div_numeric_pad_cell" style="background-color:darkslategray;">C</div>
+                  <div class="div_css_grid" style="grid-template-columns: 20vw 20vw 20vw 20vw 20vw; grid-template-rows: 12vh 12vh 12vh 12vh;">
+                        <div id="div_7" class="div_cell" >7</div>
+                        <div id="div_8" class="div_cell" >8</div>
+                        <div id="div_9" class="div_cell" >9</div>
+                        <div id="div_B" class="div_cell cell_commands" >⌫</div>
+                        <div id="div_C" class="div_cell cell_commands" >C</div>
 
-                        <div id="div_4" class="div_numeric_pad_cell" >4</div>
-                        <div id="div_5" class="div_numeric_pad_cell" >5</div>
-                        <div id="div_6" class="div_numeric_pad_cell" >6</div>
-                        <div id="div_plus" class="div_numeric_pad_cell" >+</div>
-                        <div id="div_minus" class="div_numeric_pad_cell" >-</div>
+                        <div id="div_4" class="div_cell" >4</div>
+                        <div id="div_5" class="div_cell" >5</div>
+                        <div id="div_6" class="div_cell" >6</div>
+                        <div id="div_today" class="div_cell" >T</div>
+                        <div id="div_minus" class="div_cell" ></div>
 
-                        <div id="div_1" class="div_numeric_pad_cell" >1</div>
-                        <div id="div_2" class="div_numeric_pad_cell" >2</div>
-                        <div id="div_3" class="div_numeric_pad_cell" >3</div>
-                        <div id="div_multiply" class="div_numeric_pad_cell" >x</div>
-                        <div id="div_divide" class="div_numeric_pad_cell" >/</div>
+                        <div id="div_1" class="div_cell" >1</div>
+                        <div id="div_2" class="div_cell" >2</div>
+                        <div id="div_3" class="div_cell" >3</div>
+                        <div id="div_multiply" class="div_cell" ></div>
+                        <div id="div_divide" class="div_cell" ></div>
 
-                        <div id="div_0" class="div_numeric_pad_cell" >0</div>
-                        <div id="div_dot" class="div_numeric_pad_cell" >.</div>
-                        <div id="div_plus_minus" class="div_numeric_pad_cell" >+-</div>
-                        <div id="div_percent" class="div_numeric_pad_cell" >%</div>
-                        <div id="div_equal" class="div_numeric_pad_cell"style="background-color:darkslategray;" >=</div>
+                        <div id="div_0" class="div_cell" >0</div>
+                        <div id="div_dot" class="div_cell" >.</div>
+                        <div id="div_colon" class="div_cell" >:</div>
+                        <div id="div_percent" class="div_cell" ></div>
+                        <div id="div_equal" class="div_cell cell_commands" ></div>
 
+                  </div>
+            </div>
+      </div>
+            
+      <div id="modal_01" class="w3-modal">
+            <div class="w3-modal-content">
+                  <div class="w3-container">
+                        <p>choose date or time conversion:</p>
+                        <p>to or from fullweeks or millidays</p>
+                        <hr/>
+                        <p><span id="cnv_yf">yyyy-mm-dd ---> fw</span> || <span id="cnv_fy">fw ---> yyyy-mm-dd</span></p>
+                        <p><span id="cnv_df">dd.mm.yyyy ---> fw</span> || <span id="cnv_fd">fw ---> dd.mm.yyyy</span></p> 
+                        <p><span id="cnv_mf">mm/dd/yyyy ---> fw</span> || <span id="cnv_fm">fw ---> mm/dd/yyyy</span></p>
+                        <hr/>
+                        <p><span id="cnv_24m">HH:MM 24---> md</span> || <span id="cnv_m24">md ---> HH:MM 24</span></p>
+                        <p><span id="cnv_12m">HH:MM 12 ---> md</span> || <span id="cnv_m12">md ---> HH:MM 12</span></p>
+                        <hr/>
+                        <p><span id="cnv_sm">seconds ---> μd</span> || <span id="cnv_ms">μd ---> seconds</span></p>
+                  </div>
+            </div>
+      </div>
+      <div id="modal_02" class="w3-modal">
+            <div class="w3-modal-content">
+                  <div class="w3-container">
+                        <h2>About</h2>
+                        <p>Explanation of new units "fullweek" and "millidays" on github:</p>
+                        <p><a href="https://github.com/LucianoBestia/new_date_time_units_and_formats" target="_blank" >new_date_time_units_and_formats</a></p>
+                        <p>Description of existing date formats by countries:</p>
+                        <p><a href="https://en.wikipedia.org/wiki/Date_format_by_country" target="_blank" >Date format by country</a></p>
+                        <p>OpenSource MIT license</p>
+                        <p>© 2021 Luciano Bestia</p>
+                        <p id="modal_02_close">[Close]</p>
                   </div>
             </div>
       </div>
