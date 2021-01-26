@@ -1,6 +1,6 @@
 [package]
 name = "new_date_time_units_and_formats"
-version = "2021.123.1642"
+version = "2021.126.2052"
 authors = ["Luciano Bestia <Luciano.Bestia@gmail.com>"]
 edition = "2018"
 description = "my proposal for a new date time units and formats"
@@ -20,6 +20,8 @@ unwrap = "1.2.1"
 wasm-bindgen = { version = "0.2.69", features = ["serde-serialize"] }
 console_error_panic_hook = "0.1.6"
 js-sys = "0.3.46"
+chrono = "0.4.19"
+regex = "1"
 
 [dependencies.web-sys]
 version = "0.3.46"

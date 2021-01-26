@@ -88,7 +88,7 @@ body {
     width:100vw;
     height:100vh;
     overflow:auto;
-    /*opacity*/
+    /*opacity 70%*/
     background-color:rgba(0,0,0,0.7)
 }
 .w3-modal-content{
@@ -97,4 +97,14 @@ body {
     position:relative;
     padding:5vw;
     outline:0;
+}
+.span_button{
+    border: 1pt;
+    border-style: solid;
+    background-color:var(--b_color_toolbar);
+}
+
+.disabled_button {
+    pointer-events: none;
+    opacity: 0.2;
 }

@@ -53,7 +53,7 @@
       <!--This content will change from the wasm code.-->
       <div id="div_for_content" style="height: 100vh;" >
             <div class="div_css_grid" style="grid-template-columns: 100vw; grid-template-rows: 9vh 15vh 12vh 15vh 48vh;">
-                  <div id="div_title"><span>new date and time converter</span>
+                  <div id="div_title"><span>fullweeks or millidays converter</span>
                         <span id="span_menu" style="float:right;padding-right: 5vw;">☰</span></div>
                   <div id="div_input" ></div>
                   <div id="div_toolbar">yyyy-mm-dd ---> fw</div>
@@ -70,19 +70,19 @@
                         <div id="div_5" class="div_cell" >5</div>
                         <div id="div_6" class="div_cell" >6</div>
                         <div id="div_today" class="div_cell" >T</div>
-                        <div id="div_minus" class="div_cell" ></div>
+                        <div id="div_minus" class="div_cell" >-</div>
 
                         <div id="div_1" class="div_cell" >1</div>
                         <div id="div_2" class="div_cell" >2</div>
                         <div id="div_3" class="div_cell" >3</div>
                         <div id="div_multiply" class="div_cell" ></div>
-                        <div id="div_divide" class="div_cell" ></div>
+                        <div id="div_divide" class="div_cell" >/</div>
 
                         <div id="div_0" class="div_cell" >0</div>
                         <div id="div_dot" class="div_cell" >.</div>
-                        <div id="div_colon" class="div_cell" >:</div>
-                        <div id="div_percent" class="div_cell" ></div>
-                        <div id="div_equal" class="div_cell cell_commands" ></div>
+                        <div id="div_common_era" class="div_cell" >c</div>
+                        <div id="div_full_week" class="div_cell" >fw</div>
+                        <div id="div_day" class="div_cell cell_commands" >d</div>
 
                   </div>
             </div>
@@ -94,14 +94,14 @@
                         <p>choose date or time conversion:</p>
                         <p>to or from fullweeks or millidays</p>
                         <hr/>
-                        <p><span id="cnv_yf">yyyy-mm-dd ---> fw</span> || <span id="cnv_fy">fw ---> yyyy-mm-dd</span></p>
-                        <p><span id="cnv_df">dd.mm.yyyy ---> fw</span> || <span id="cnv_fd">fw ---> dd.mm.yyyy</span></p> 
-                        <p><span id="cnv_mf">mm/dd/yyyy ---> fw</span> || <span id="cnv_fm">fw ---> mm/dd/yyyy</span></p>
+                        <p><span id="cnv_yf" class="span_button" >yyyy-mm-dd ---> fw</span> || <span id="cnv_fy" class="span_button">fw ---> yyyy-mm-dd</span></p>
+                        <p><span id="cnv_df" class="span_button">dd.mm.yyyy ---> fw</span> || <span id="cnv_fd" class="span_button">fw ---> dd.mm.yyyy</span></p> 
+                        <p><span id="cnv_mf" class="span_button">mm/dd/yyyy ---> fw</span> || <span id="cnv_fm" class="span_button">fw ---> mm/dd/yyyy</span></p>
                         <hr/>
-                        <p><span id="cnv_24m">HH:MM 24---> md</span> || <span id="cnv_m24">md ---> HH:MM 24</span></p>
-                        <p><span id="cnv_12m">HH:MM 12 ---> md</span> || <span id="cnv_m12">md ---> HH:MM 12</span></p>
+                        <p><span id="cnv_24m" class="span_button">HH:MM 24---> md</span> || <span id="cnv_m24" class="span_button">md ---> HH:MM 24</span></p>
+                        <p><span id="cnv_12m" class="span_button">HH:MM 12 ---> md</span> || <span id="cnv_m12" class="span_button">md ---> HH:MM 12</span></p>
                         <hr/>
-                        <p><span id="cnv_sm">seconds ---> μd</span> || <span id="cnv_ms">μd ---> seconds</span></p>
+                        <p><span id="cnv_sm" class="span_button">seconds ---> μd</span> || <span id="cnv_ms" class="span_button">μd ---> seconds</span></p>
                   </div>
             </div>
       </div>

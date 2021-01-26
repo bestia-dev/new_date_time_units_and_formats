@@ -5,14 +5,14 @@
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **my proposal for a new date time units and formats**  
-***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.123.1642  date: 2021-01-23 authors: Luciano Bestia***  
+***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.126.2052  date: 2021-01-26 authors: Luciano Bestia***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
 [comment]: # (lmake_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-218-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-416-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-14-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-16-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-21-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 
@@ -104,17 +104,26 @@ One year has approximately 365 days that are divided into 12 months.
 Because Earths revolution around the Sun is not exact, we have to add one day every 4 years, except every 100 years, except again every 400 years.  
 Confusing? Yes it is.  
 The universe doesn't play nice with our human perceptions and simplifications. If you ask an astronomer it is even more complicated than that. We just made some super simple rules. Out of ignorance in the archaic old times. We know better now.  
+
 It is impossible to use the metric system and divide a year into 100 days. We need to follow the natural revolution of our planet. That makes sense.  
+
 Months are a historic mess because humans gained more knowledge over time. From the humble starts when the divine ideal of 360 days was divided into 12 months we came finally to this mess: we have months with 30 and 31 days and one exceptional february with 28 or 29 days. Confusing and not necessary.  
-There exists also weeks of 7 days. In history there was an attempt to change it to 10 days, but it failed because of human inability to change basic daily routines and rhythms. It happened during the French revolution. So we will sadly leave it to 7 days. But it is really simple to convert this "new calendar" into a 10-day-week calendar.  
 Every month and every year starts with a different weekday and we need a new calendar every year. That is just comical.  
 In the old times months where important for the farmers (95% of the population) to work in the fields. Today the farmers are only 3% of the population. Life and business does not depend on "months" anymore. It is a standard in the big industry to plan, work and communicate in "weeks". And this is smart.  
+
+The classic week contains 7 days. In history there was an attempt to change it to 10 days, but it failed because of human inability to change basic daily routines and rhythms. It happened during the French revolution. So we will sadly leave it to 7 days. But it is really simple to convert this "new calendar" into a 10-day-week calendar.  
+
 Let abolish months altogether. There are 52 full weeks in a year, that makes 364 days. Every year, there is 1 day left except every 4 year are 2 days except every 100 are again 1 day and every 400 years 2 days. What to do with this 1 or 2 days at the end of the year?  
-CELEBRATION DAYS ! Let celebrate the new year !  
+
+CELEBRATION DAYS ! Let celebrate the new year ! 
+
 Sometimes for one day and sometimes for 2 days. Most people already celebrates New Years Eve in this fashion.  
 This means that every year will start with a monday. Forever. No need for a new calendar. 52 full weeks always the same.   Simple.  
-We need to make new ideas to be global, international and computer friendly. Forget about the old cultural differences that caused a lot of problems.  
+We need to make new ideas to be global, international and computer friendly. Forget about the old cultural differences that caused a lot of problems. Most of the people don't know there are a lot of different calendars used around the world and in the history. They just need one calendar and they will be happy until someone tries to change it.  
+ 
 First we need a new name because week has constantly 7 days. The new word should be "fullweek" abbreviated to "fw".  It starts working on monday and ends sunday to rest after a week of work.  
+The weekday is already inside the new date format as a number: 1d is monday and 7d is sunday. So no more unknown weekday. And having a numeric value for weekday is way better that words that are different in different languages and cultures.  
+
 Quarters for business reports are very easily calculated: 52 fullweeks / 4 = 13 fullweeks per quarter.  
 The use of months should disappear in official life.  Sure people will use it in some cultural context in their private life just like we use zodiac signs in astrology today.
 Instead of a month, some things would be calculated in intervals of 4 fullweeks. That makes exactly 13 four-weeks intervals in a year. That is very close to the old notion of "month".  
