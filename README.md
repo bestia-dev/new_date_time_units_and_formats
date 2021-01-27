@@ -5,14 +5,14 @@
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **my proposal for a new date time units and formats**  
-***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.127.1150  date: 2021-01-27 authors: Luciano Bestia***  
+***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.127.1539  date: 2021-01-27 authors: Luciano Bestia***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
 [comment]: # (lmake_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-409-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-485-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-15-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-16-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-23-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 
@@ -114,7 +114,7 @@ It is impossible to use the metric system and divide a year into 100 days. We ne
 Months are a historic mess because humans gained more knowledge over time. From the humble starts when the divine ideal of 360 days was divided into 12 months we came finally to this mess: we have months with 30 and 31 days and one exceptional february with 28 or 29 days. Confusing and not necessary.  
 The date format is so different between cultures that it is sometimes dangerous to misinterpret the numbers: [Date format by country](https://en.wikipedia.org/wiki/Date_format_by_country).  
 Every month starts with a different weekday and we need a new calendar every year. That is just comical.  
-In the old times months were important for the farmers (95% of the population) to work in the fields. They followed the moon phases, because they didn't have any other way to measure time, but even that is not compatible with the calendar months. Today the farmers are only 3% of the population. Life and business does not depend on "months" anymore. It is a standard in the big industry to plan, work and communicate in "weeks". And this is smart.  
+In the old times months were important for the farmers (95% of the population) to work in the fields. They followed the moon phases, because they didn't have any other way to measure time, but even that is not compatible with the calendar months. Today the farmers are only 3% of the population. Life and business does not depend on "months" anymore. It is standard in the big industry to plan, work and communicate in "weeks". And this is smart.  
 
 The classic week contains 7 days. In history there was an attempt to change it to 10 days, but it failed because of human inability to change basic daily routines and rhythms. It happened during the French revolution. So we will sadly leave it to 7 days. But it is really simple to convert this "new calendar" into a 10-day-week calendar.  
 
@@ -127,7 +127,7 @@ This means that every year will start with a monday. Forever. No need for a new 
 Simple.  
 We need to make new ideas to be global, international and computer friendly. Forget about the old cultural differences that caused a lot of problems. Most of the people don't know there are a lot of different calendars used around the world and in the history. They just need one calendar and they will be happy until someone tries to change it.  
 
-First we need a new name because classic week has constantly 7 days. The new word should be "veek" abbreviated to "v". Same-same, but different. It starts with the working monday and ends sunday to rest after a week of work.  
+First we need a new name for disambiguation because the classic week has constantly 7 days. The new word should be "veek" abbreviated to "v". Same-same, but different. It starts with the working monday and ends sunday to rest after a week of work.  
 The veekday is already inside the new date format as a number: 1d is monday and 7d is sunday. So no more unknown veekdays in the date format. And having a numeric value for veekday is way better that words that are different in different languages and cultures. I propose that monday, tuesday,... be renamed to 1d, 2d, 3d, 4d, 5d, 6d, 7d with pronunciation onedee, twodee, threedee, fourdee, fivedee, sixdee, sevendee.  
 
 Quarters for business reports are very easily calculated: 52 veeks / 4 = 13 veeks per quarter.  
@@ -159,8 +159,8 @@ Instead of a month, some things would be calculated in intervals of 4 veeks. Tha
 | december 31th       | 53v 1d       | celebration day 1        |
 
 People will probably shorten the pronunciation to "one onedee", "forty nine twodee" without repeating "veek" every single time.  
-It is very clear if a number finishes with a unit of measure. For years it should be c for CE "common era".  
-Example of a full date format:  
+It is very clear if a number finishes with a unit of measure. For years it should be `c` for `CE` - "common era".  
+Example of a full date format with veeks:  
 `2021c 23v 3d`  
 And some more details for the format to be very explicit, correct and unambiguous:  
 
@@ -171,17 +171,17 @@ And some more details for the format to be very explicit, correct and unambiguou
 
 ## calendar forever
 
-I prepared a simple spreadsheet with the new calendar. It is good forever.
+I prepared a simple spreadsheet with the new veek calendar. It is good forever.
 [new_calendar_forever.ods](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 [![calendar 1](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 [![calendar 2](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 
 ## Please comment
 
-It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they was born in a system and learned all the fine details.  
+It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they was born in a system and learned all the fine details over time. The cultural change to the new system will require a change of a generation. Children that learn the new system early will see the old system as archaic, complicated and not easily understandable.  
 Let discuss it. But most of all let strive for change for the better. All of humanity together.  
 
-## a little rust converter program (pwa, wasm)
+## a little rust converter program (pwa, wasm) for mobile
 
 Install some utilities:  
 `cargo install cargo-make`
@@ -199,3 +199,4 @@ Open the browser on:
 <http://127.0.0.1:4000/new_date_time_units_and_formats/>  
   
 This is a PWA application and works offline inside the browser with wasm.  
+It is made for mobile browsers. In the desktop browser press F12 and choose  mobile format.  

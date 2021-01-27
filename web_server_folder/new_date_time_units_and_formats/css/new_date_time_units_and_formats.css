@@ -45,6 +45,7 @@ body {
 }
 
 #div_title{
+    pointer-events: none;
     font-size: 20px;
     background-color:var(--b_color_title);
     color:var(--f_color_title);
@@ -53,23 +54,26 @@ body {
 }
 
 #span_menu{
+    pointer-events: all;
     float:right;
     padding-right: 5vw;
 }
 
-#div_input{
+#div_input{pointer-events: none;
     font-size: 30px;
     line-height: 15vh;
     padding-left: 3vw;
     background-color: var(--b_color_input_output);
 }
 #div_toolbar{
+    pointer-events: all;
     font-size: 20px;
     background-color:var(--b_color_toolbar);
     line-height: 12vh;
     padding-left: 3vw;
 }
 #div_output{
+    pointer-events: none;
     font-size: 30px;
     line-height: 15vh;
     padding-left: 3vw;
@@ -85,6 +89,7 @@ body {
 }
 
 .div_cell {
+    pointer-events: all;
     text-align: center;
     line-height: 12vh;
     background-color:var(--b_color_cell);

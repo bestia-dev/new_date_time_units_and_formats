@@ -3,7 +3,7 @@
 // endregion: lmake_md_to_doc_comments include README.md A //!
 
 // use unwrap::unwrap;
-use chrono::NaiveDate;
+use chrono::{NaiveDate, NaiveTime};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::{JsCast, JsValue};
 
@@ -26,34 +26,40 @@ pub fn wasm_bindgen_start() -> Result<(), JsValue> {
     set_event_handlers();
     // init values
     cnv_on_click("cnv_yf");
-    div_today_on_click();
+    div_now_on_click();
 
     // return
     Ok(())
 }
 
 pub fn set_event_handlers() {
-    on_click!("div_1", div_cell_on_click, "1");
-    on_click!("div_2", div_cell_on_click, "2");
-    on_click!("div_3", div_cell_on_click, "3");
-    on_click!("div_4", div_cell_on_click, "4");
-    on_click!("div_5", div_cell_on_click, "5");
-    on_click!("div_6", div_cell_on_click, "6");
-    on_click!("div_7", div_cell_on_click, "7");
-    on_click!("div_8", div_cell_on_click, "8");
-    on_click!("div_9", div_cell_on_click, "9");
-    on_click!("div_0", div_cell_on_click, "0");
+    on_click!("div_1", div_cell_multi_value_on_click, "div_1");
+    on_click!("div_2", div_cell_multi_value_on_click, "div_2");
+    on_click!("div_3", div_cell_multi_value_on_click, "div_3");
+    on_click!("div_4", div_cell_multi_value_on_click, "div_4");
+    on_click!("div_5", div_cell_multi_value_on_click, "div_5");
+    on_click!("div_6", div_cell_multi_value_on_click, "div_6");
+    on_click!("div_7", div_cell_multi_value_on_click, "div_7");
+    on_click!("div_8", div_cell_multi_value_on_click, "div_8");
+    on_click!("div_9", div_cell_multi_value_on_click, "div_9");
+    on_click!("div_0", div_cell_multi_value_on_click, "div_0");
+
     on_click!("div_dot", div_cell_on_click, ".");
     on_click!("div_common_era", div_cell_on_click, ":");
     on_click!("div_hyphen", div_cell_on_click, "-");
     on_click!("div_slash", div_cell_on_click, "/");
-    on_click!("div_common_era", div_cell_on_click, "c ");
-    on_click!("div_veek", div_cell_on_click, "v ");
-    on_click!("div_day", div_cell_on_click, "d");
+
+    on_click!(
+        "div_common_era",
+        div_cell_multi_value_on_click,
+        "div_common_era"
+    );
+    on_click!("div_veek", div_cell_multi_value_on_click, "div_veek");
+    on_click!("div_day", div_cell_multi_value_on_click, "div_day");
 
     on_click!("div_backspace", div_backspace_on_click);
     on_click!("div_clear", div_c_on_click);
-    on_click!("div_today", div_today_on_click);
+    on_click!("div_now", div_now_on_click);
 
     on_click!("div_toolbar", toolbar_on_click);
 
@@ -122,12 +128,42 @@ pub fn convert() {
                 None => set_text("div_output", "unrecognized format"),
             }
         }
-        "HH:MM 24---> md" => set_text("div_output", &value_orig),
-        "md ---> HH:MM 24" => set_text("div_output", &value_orig),
-        "HH:MM 12 ---> md" => set_text("div_output", &value_orig),
-        "md ---> HH:MM 12" => set_text("div_output", &value_orig),
-        "seconds ---> μd" => set_text("div_output", &value_orig),
-        "μd ---> seconds" => set_text("div_output", &value_orig),
+        "HH:MM 24 ---> md" => match NaiveTime::parse_from_str(&value_orig, "%H:%M") {
+            Ok(naive_time) => set_text("div_output", &naive_time_to_millis(naive_time)),
+            Err(_err) => set_text("div_output", "unrecognized format"),
+        },
+        "md ---> HH:MM 24" => {
+            let nt = millis_to_naive_time(&value_orig);
+            match nt {
+                Some(naive_time) => set_text(
+                    "div_output",
+                    naive_time.format("%H:%M").to_string().as_ref(),
+                ),
+                None => set_text("div_output", "unrecognized format"),
+            }
+        }
+        "HH:MM 12 ---> md" => match NaiveTime::parse_from_str(&value_orig, "%I:%M %p") {
+            Ok(naive_time) => set_text("div_output", &naive_time_to_millis(naive_time)),
+            Err(_err) => set_text("div_output", "unrecognized format"),
+        },
+        "md ---> HH:MM 12" => {
+            let nt = millis_to_naive_time(&value_orig);
+            match nt {
+                Some(naive_time) => set_text(
+                    "div_output",
+                    naive_time.format("%I:%M %p").to_string().as_ref(),
+                ),
+                None => set_text("div_output", "unrecognized format"),
+            }
+        }
+        "seconds ---> μd" => set_text("div_output", &seconds_to_micros(&value_orig)),
+        "μd ---> seconds" => {
+            let seconds = micros_to_seconds(&value_orig);
+            match seconds {
+                Some(seconds) => set_text("div_output", seconds.as_ref()),
+                None => set_text("div_output", "unrecognized format"),
+            }
+        }
         _ => set_text("div_output", &format!("?? {}", conversion)),
     }
 }
@@ -140,6 +176,22 @@ pub fn div_cell_on_click(text: &str) {
     } else {
         set_text("div_input", &format!("{}{}", get_text("div_input"), text));
     }
+    convert();
+}
+
+pub fn div_cell_multi_value_on_click(element_id: &str) {
+    let input_text = get_text("div_input");
+    let text = get_text(element_id);
+    if text == "P" || text == "A" {
+        // AM PM has space before
+        set_text("div_input", &format!("{} {}", get_text("div_input"), text));
+    } else if input_text.ends_with("c") || input_text.ends_with("v") {
+        // the single space after c or v
+        set_text("div_input", &format!("{} {}", get_text("div_input"), text));
+    } else {
+        set_text("div_input", &format!("{}{}", get_text("div_input"), text));
+    }
+
     convert();
 }
 
@@ -157,25 +209,47 @@ pub fn div_c_on_click() {
     convert();
 }
 
-pub fn div_today_on_click() {
-    let now = js_sys::Date::new_0();
-    let now = NaiveDate::from_ymd(
-        now.get_full_year() as i32,
-        now.get_month() + 1,
-        now.get_date(),
+pub fn div_now_on_click() {
+    let now_js = js_sys::Date::new_0();
+    let now_time = NaiveTime::from_hms(now_js.get_hours(), now_js.get_minutes(), 0);
+    let now_date = NaiveDate::from_ymd(
+        now_js.get_full_year() as i32,
+        now_js.get_month() + 1,
+        now_js.get_date(),
     );
     let conversion = get_text("div_toolbar");
 
     if conversion.starts_with("v") {
-        set_text("div_input", &naive_date_to_veek(now));
+        set_text("div_input", &naive_date_to_veek(now_date));
     } else if conversion.starts_with("yyyy-mm-dd") {
-        set_text("div_input", now.format("%Y-%m-%d").to_string().as_ref());
+        set_text(
+            "div_input",
+            now_date.format("%Y-%m-%d").to_string().as_ref(),
+        );
     } else if conversion.starts_with("dd.mm.yyyy") {
-        set_text("div_input", now.format("%d.%m.%Y").to_string().as_ref());
+        set_text(
+            "div_input",
+            now_date.format("%d.%m.%Y").to_string().as_ref(),
+        );
     } else if conversion.starts_with("mm/dd/yyyy") {
-        set_text("div_input", now.format("%m/%d/%Y").to_string().as_ref());
+        set_text(
+            "div_input",
+            now_date.format("%m/%d/%Y").to_string().as_ref(),
+        );
+    } else if conversion.starts_with("HH:MM 24") {
+        set_text("div_input", now_time.format("%H:%M").to_string().as_ref());
+    } else if conversion.starts_with("HH:MM 12") {
+        set_text(
+            "div_input",
+            now_time.format("%I:%M %p").to_string().as_ref(),
+        );
+    } else if conversion.starts_with("md") {
+        set_text("div_input", &naive_time_to_millis(now_time));
+    } else if conversion.starts_with("μd") {
+        set_text("div_input", "144.5μd");
+    } else if conversion.starts_with("seconds") {
+        set_text("div_input", "10.44");
     }
-
     convert();
 }
 
@@ -188,133 +262,96 @@ pub fn cnv_on_click(element_id: &str) {
     let conversion = get_text(element_id);
     set_text("div_toolbar", &conversion);
     modal_close("modal_01");
-    //different formats allows different characters
+    // reset to the most often value
+    get_element_by_id("div_now").set_class_name("div_cell");
+    get_element_by_id("div_hyphen").set_class_name("div_cell cell_disabled");
+    get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
+    get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
+    get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
+    get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
+    get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
+    get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
+    get_html_element_by_id("div_common_era").set_inner_text("c");
+    get_html_element_by_id("div_veek").set_inner_text("v");
+    get_html_element_by_id("div_day").set_inner_text("d");
+
+    // different formats allows different characters
 
     match conversion.as_ref() {
         "yyyy-mm-dd ---> v" => {
             debug_write("cnv_on_click yyyy-mm-dd ---> v");
-            get_element_by_id("div_today").set_class_name("div_cell");
+            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_hyphen").set_class_name("div_cell");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
         }
         "v ---> yyyy-mm-dd" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_common_era").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
         }
         "dd.mm.yyyy ---> v" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_dot").set_class_name("div_cell");
-            get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
         }
         "v ---> dd.mm.yyyy" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_common_era").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
         }
         "mm/dd/yyyy ---> v" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_slash").set_class_name("div_cell");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
         }
         "v ---> mm/dd/yyyy" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_common_era").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
         }
-        "HH:MM 24---> md" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
+        "HH:MM 24 ---> md" => {
+            get_element_by_id("div_now").set_class_name("div_cell");
+            get_element_by_id("div_colon").set_class_name("div_cell");
         }
         "md ---> HH:MM 24" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
+            get_element_by_id("div_common_era").set_class_name("div_cell");
+            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_html_element_by_id("div_common_era").set_inner_text("m");
+            get_html_element_by_id("div_veek").set_inner_text("d");
         }
         "HH:MM 12 ---> md" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
+            get_element_by_id("div_colon").set_class_name("div_cell");
+            get_element_by_id("div_common_era").set_class_name("div_cell");
+            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_element_by_id("div_day").set_class_name("div_cell");
+            get_html_element_by_id("div_common_era").set_inner_text("A");
+            get_html_element_by_id("div_veek").set_inner_text("P");
+            get_html_element_by_id("div_day").set_inner_text("M");
         }
         "md ---> HH:MM 12" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
+            get_element_by_id("div_common_era").set_class_name("div_cell");
+            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_html_element_by_id("div_common_era").set_inner_text("m");
+            get_html_element_by_id("div_veek").set_inner_text("d");
         }
         "seconds ---> μd" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
+            get_element_by_id("div_dot").set_class_name("div_cell");
         }
         "μd ---> seconds" => {
-            get_element_by_id("div_today").set_class_name("div_cell");
-            get_element_by_id("div_hyphen").set_class_name("div_cell");
-            get_element_by_id("div_colon").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
-            get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
+            get_element_by_id("div_now").set_class_name("div_cell");
+            get_element_by_id("div_dot").set_class_name("div_cell");
+            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_element_by_id("div_day").set_class_name("div_cell");
+            get_html_element_by_id("div_veek").set_inner_text("μ");
+            get_html_element_by_id("div_day").set_inner_text("d");
         }
         _ => set_text("div_output", &format!("?? {}", conversion)),
     }
-    div_today_on_click();
+    div_now_on_click();
     convert();
 }
 
