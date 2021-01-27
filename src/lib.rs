@@ -280,48 +280,39 @@ pub fn cnv_on_click(element_id: &str) {
     match conversion.as_ref() {
         "yyyy-mm-dd ---> v" => {
             debug_write("cnv_on_click yyyy-mm-dd ---> v");
-            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_hyphen").set_class_name("div_cell");
         }
         "v ---> yyyy-mm-dd" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_common_era").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
         }
         "dd.mm.yyyy ---> v" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_dot").set_class_name("div_cell");
         }
         "v ---> dd.mm.yyyy" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_common_era").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
         }
         "mm/dd/yyyy ---> v" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_slash").set_class_name("div_cell");
         }
         "v ---> mm/dd/yyyy" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_common_era").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
         }
         "HH:MM 24 ---> md" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_colon").set_class_name("div_cell");
         }
         "md ---> HH:MM 24" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
-            get_element_by_id("div_common_era").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
-            get_html_element_by_id("div_common_era").set_inner_text("m");
-            get_html_element_by_id("div_veek").set_inner_text("d");
+            get_element_by_id("div_day").set_class_name("div_cell");
+            get_html_element_by_id("div_veek").set_inner_text("m");
+            get_html_element_by_id("div_day").set_inner_text("d");
         }
         "HH:MM 12 ---> md" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
             get_element_by_id("div_colon").set_class_name("div_cell");
             get_element_by_id("div_common_era").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
@@ -331,18 +322,17 @@ pub fn cnv_on_click(element_id: &str) {
             get_html_element_by_id("div_day").set_inner_text("M");
         }
         "md ---> HH:MM 12" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
-            get_element_by_id("div_common_era").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
-            get_html_element_by_id("div_common_era").set_inner_text("m");
-            get_html_element_by_id("div_veek").set_inner_text("d");
+            get_element_by_id("div_day").set_class_name("div_cell");
+            get_html_element_by_id("div_veek").set_inner_text("m");
+            get_html_element_by_id("div_day").set_inner_text("d");
         }
         "seconds ---> μd" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
+            get_element_by_id("div_now").set_class_name("div_cell cell_disabled");
             get_element_by_id("div_dot").set_class_name("div_cell");
         }
         "μd ---> seconds" => {
-            get_element_by_id("div_now").set_class_name("div_cell");
+            get_element_by_id("div_now").set_class_name("div_cell cell_disabled");
             get_element_by_id("div_dot").set_class_name("div_cell");
             get_element_by_id("div_veek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
