@@ -5,14 +5,14 @@
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **my proposal for a new date time units and formats**  
-***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.127.1545  date: 2021-01-27 authors: Luciano Bestia***  
+***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.127.1641  date: 2021-01-27 authors: Luciano Bestia***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
 [comment]: # (lmake_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-475-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-15-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-23-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-508-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-18-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-25-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 
@@ -93,7 +93,7 @@ Probably people will shorten microdays to "micros".
 | --------------: | -----------: | ------------: |
 | 1 s             | 0.012 md     | 12 μd         |
 | 10 s            | 0.116 md     | 116 μd        |
-| 10.44 s         | 0.120833 md  | 120.833 μd    |
+| 9.58 s          | 0.11088 md   | 110.880 μd    |
 | 30 s            | 0.347 md     | 347 μd        |
 | 60 s            | 0.694 md     | 694 μd        |
 | 86.4 s          | 1 md         | 1000 μd       |
@@ -156,7 +156,7 @@ Instead of a month, some things would be calculated in intervals of 4 veeks. Tha
 | november 5th        | 45v 1d       | veek forty five onedee   |
 | december 3th        | 49v 1d       | veek forty nine onedee   |
 | december 25th       | 52v 2d       | veek fifty two twodee    |
-| december 31th       | 53v 1d       | celebration day 1        |
+| december 31th       | 53v 1d       | celebration onedee       |
 
 People will probably shorten the pronunciation to "one onedee", "forty nine twodee" without repeating "veek" every single time.  
 It is very clear if a number finishes with a unit of measure. For years it should be `c` for `CE` - "common era".  

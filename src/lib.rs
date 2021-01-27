@@ -133,12 +133,18 @@ pub fn convert() {
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "md ---> HH:MM 24" => {
-            let nt = millis_to_naive_time(&value_orig);
-            match nt {
-                Some(naive_time) => set_text(
-                    "div_output",
-                    naive_time.format("%H:%M").to_string().as_ref(),
-                ),
+            let millis = millis_from_str_opt(&value_orig);
+            match millis {
+                Some(millis) => {
+                    let nt = millis_to_naive_time(millis);
+                    match nt {
+                        Some(naive_time) => set_text(
+                            "div_output",
+                            naive_time.format("%H:%M").to_string().as_ref(),
+                        ),
+                        None => set_text("div_output", "unrecognized format"),
+                    }
+                }
                 None => set_text("div_output", "unrecognized format"),
             }
         }
@@ -147,20 +153,43 @@ pub fn convert() {
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "md ---> HH:MM 12" => {
-            let nt = millis_to_naive_time(&value_orig);
-            match nt {
-                Some(naive_time) => set_text(
-                    "div_output",
-                    naive_time.format("%I:%M %p").to_string().as_ref(),
-                ),
+            let millis = millis_from_str_opt(&value_orig);
+            match millis {
+                Some(millis) => {
+                    let nt = millis_to_naive_time(millis);
+                    match nt {
+                        Some(naive_time) => set_text(
+                            "div_output",
+                            naive_time.format("%I:%M %p").to_string().as_ref(),
+                        ),
+                        None => set_text("div_output", "unrecognized format"),
+                    }
+                }
                 None => set_text("div_output", "unrecognized format"),
             }
         }
-        "seconds ---> μd" => set_text("div_output", &seconds_to_micros(&value_orig)),
-        "μd ---> seconds" => {
-            let seconds = micros_to_seconds(&value_orig);
+        "seconds ---> μd" => {
+            use std::str::FromStr;
+            let seconds = f64::from_str(&value_orig);
             match seconds {
-                Some(seconds) => set_text("div_output", seconds.as_ref()),
+                Ok(seconds) => {
+                    let micros = seconds_to_micros(seconds);
+                    // format to 3 decimal places
+                    let micros = format!(r#"{:.3}μd"#, micros);
+                    set_text("div_output", &micros);
+                }
+                Err(_err) => set_text("div_output", "unrecognized format"),
+            }
+        }
+        "μd ---> seconds" => {
+            let micros = micros_from_str_opt(&value_orig);
+            match micros {
+                Some(micros) => {
+                    let seconds = micros_to_seconds(micros);
+                    // format to 3 decimal places
+                    let seconds = format!("{:.3}", seconds);
+                    set_text("div_output", &seconds);
+                }
                 None => set_text("div_output", "unrecognized format"),
             }
         }
@@ -246,9 +275,9 @@ pub fn div_now_on_click() {
     } else if conversion.starts_with("md") {
         set_text("div_input", &naive_time_to_millis(now_time));
     } else if conversion.starts_with("μd") {
-        set_text("div_input", "144.5μd");
+        set_text("div_input", "110.880μd");
     } else if conversion.starts_with("seconds") {
-        set_text("div_input", "10.44");
+        set_text("div_input", "9.58");
     }
     convert();
 }

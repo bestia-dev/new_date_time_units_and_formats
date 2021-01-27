@@ -2,8 +2,6 @@
 
 use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
 
-use crate::web_sys_mod::debug_write;
-
 pub fn naive_date_to_veek(nd: NaiveDate) -> String {
     // return
     format!(
@@ -33,42 +31,53 @@ pub fn naive_time_to_millis(nt: NaiveTime) -> String {
     // return
     format!(
         r#"{}md"#,
-        (1000.0 / (24.0 * 60.0 * 60.0) * nt.num_seconds_from_midnight() as f64).round()
+        (nt.num_seconds_from_midnight() as f64 / 86.4).round()
     )
 }
 
-pub fn millis_to_naive_time(millis: &str) -> Option<NaiveTime> {
+pub fn millis_from_str_opt(millis: &str) -> Option<f64> {
     // the format is fixed:a decimal number followed by "md" no space
     use regex::Regex;
     let re = Regex::new(r"^\d*(\.\d+)?md$").unwrap();
     use std::str::FromStr;
     if re.is_match(millis) {
         let millis = millis.strip_suffix("md").unwrap();
-        let millis = f64::from_str(millis).unwrap_or(0.0);
-        NaiveTime::from_num_seconds_from_midnight_opt((millis * 86.4).round() as u32, 0)
+        let millis = f64::from_str(millis);
+        // return
+        match millis {
+            Ok(millis) => Some(millis),
+            Err(_err) => None,
+        }
     } else {
-        debug_write("millis not match");
         return None;
     }
 }
 
-pub fn seconds_to_micros(s: &str) -> String {
-    use std::str::FromStr;
-    let seconds = f64::from_str(s).unwrap_or(0.0);
-    // return
-    format!(r#"{:.3}μd"#, (1000000.0 / (24.0 * 60.0 * 60.0) * seconds))
+/// rounded to seconds
+pub fn millis_to_naive_time(millis: f64) -> Option<NaiveTime> {
+    NaiveTime::from_num_seconds_from_midnight_opt((millis * 86.4).round() as u32, 0)
 }
 
-pub fn micros_to_seconds(micros: &str) -> Option<String> {
-    // the format is fixed:a decimal number followed by "μd" no space
+/// 24*60*60 = 86_400 seconds per day
+/// 1_000_000 μd per day
+pub fn seconds_to_micros(seconds: f64) -> f64 {
+    seconds / 0.0864
+}
+
+pub fn micros_from_str_opt(micros: &str) -> Option<f64> {
+    // the string format is fixed:a decimal number followed by "μd". No space.
     use regex::Regex;
     let re = Regex::new(r"^\d*(\.\d+)?μd$").unwrap();
     use std::str::FromStr;
     if re.is_match(micros) {
         let micros = micros.strip_suffix("μd").unwrap();
         let micros = f64::from_str(micros).unwrap_or(0.0);
-        Some(format!("{:.3}", micros * 0.0864))
+        return Some(micros);
     } else {
         return None;
     }
+}
+
+pub fn micros_to_seconds(micros: f64) -> f64 {
+    micros * 0.0864
 }
