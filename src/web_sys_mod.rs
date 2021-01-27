@@ -68,3 +68,17 @@ pub fn set_text(element_id: &str, text: &str) {
     let div = get_html_element_by_id(element_id);
     div.set_inner_text(text);
 }
+
+/// open modal div
+pub fn modal_open(element_id: &str) {
+    let _x = get_html_element_by_id(element_id)
+        .style()
+        .set_property("display", "block");
+}
+
+/// close modal div
+pub fn modal_close(element_id: &str) {
+    let _x = get_html_element_by_id(element_id)
+        .style()
+        .set_property("display", "none");
+}

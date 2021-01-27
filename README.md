@@ -5,14 +5,14 @@
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **my proposal for a new date time units and formats**  
-***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.126.2052  date: 2021-01-26 authors: Luciano Bestia***  
+***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.127.1150  date: 2021-01-27 authors: Luciano Bestia***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
 [comment]: # (lmake_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-416-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-14-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-21-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-409-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-15-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-16-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 
@@ -23,7 +23,8 @@
 ## Try it
 
 <https://bestia.dev/new_date_time_units_and_formats/>  
-![screenshot](https://github.com/LucianoBestia/new_date_time_units_and_formats/blob/main/images/screenshot01.jpg?raw=true)
+![screenshot_01](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_01.png)
+![screenshot_02](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_02.png)
 
 ## Proposal for a new date and time units and formats
 
@@ -98,59 +99,70 @@ Probably people will shorten microdays to "micros".
 The "second" is the base unit of time in the International System of Units (SI). This is unfortunate. It will probably never change.  
 The "second" is defined by taking the fixed numerical value of the caesium frequency ∆νCs, the unperturbed ground-state hyperfine transition frequency of the caesium-133 atom, to be 9192631770 when expressed in the unit Hz.  
   
-## months and days into fullweeks and weekdays
+## months and days into veeks and veekdays
 
-One year has approximately 365 days that are divided into 12 months.  
+One year has approximately 365 days that are divided into 12 months. A group of 7 days is called a week.  
 Because Earths revolution around the Sun is not exact, we have to add one day every 4 years, except every 100 years, except again every 400 years.  
 Confusing? Yes it is.  
 The universe doesn't play nice with our human perceptions and simplifications. If you ask an astronomer it is even more complicated than that. We just made some super simple rules. Out of ignorance in the archaic old times. We know better now.  
-
 It is impossible to use the metric system and divide a year into 100 days. We need to follow the natural revolution of our planet. That makes sense.  
 
 Months are a historic mess because humans gained more knowledge over time. From the humble starts when the divine ideal of 360 days was divided into 12 months we came finally to this mess: we have months with 30 and 31 days and one exceptional february with 28 or 29 days. Confusing and not necessary.  
-Every month and every year starts with a different weekday and we need a new calendar every year. That is just comical.  
-In the old times months where important for the farmers (95% of the population) to work in the fields. Today the farmers are only 3% of the population. Life and business does not depend on "months" anymore. It is a standard in the big industry to plan, work and communicate in "weeks". And this is smart.  
+The date format is so different between cultures that it is sometimes dangerous to misinterpret the numbers: [Date format by country](https://en.wikipedia.org/wiki/Date_format_by_country).  
+Every month starts with a different weekday and we need a new calendar every year. That is just comical.  
+In the old times months were important for the farmers (95% of the population) to work in the fields. They followed the moon phases, because they didn't have any other way to measure time, but even that is not compatible with the calendar months. Today the farmers are only 3% of the population. Life and business does not depend on "months" anymore. It is a standard in the big industry to plan, work and communicate in "weeks". And this is smart.  
 
 The classic week contains 7 days. In history there was an attempt to change it to 10 days, but it failed because of human inability to change basic daily routines and rhythms. It happened during the French revolution. So we will sadly leave it to 7 days. But it is really simple to convert this "new calendar" into a 10-day-week calendar.  
 
-Let abolish months altogether. There are 52 full weeks in a year, that makes 364 days. Every year, there is 1 day left except every 4 year are 2 days except every 100 are again 1 day and every 400 years 2 days. What to do with this 1 or 2 days at the end of the year?  
+There are 52 full weeks in a year, that makes 364 days. Every year, there is 1 day left except every 4 year are 2 days except every 100 are again 1 day and every 400 years 2 days. What to do with this 1 or 2 days at the end of the year?  
 
-CELEBRATION DAYS ! Let celebrate the new year ! 
+CELEBRATION DAYS ! Let celebrate the new year !  
 
-Sometimes for one day and sometimes for 2 days. Most people already celebrates New Years Eve in this fashion.  
-This means that every year will start with a monday. Forever. No need for a new calendar. 52 full weeks always the same.   Simple.  
+Celebrate for one day or sometimes for 2 days. Most people already celebrates New Years Eve in this fashion.  
+This means that every year will start with a monday. Forever. No need for a new calendar. 52 full weeks always the same.  
+Simple.  
 We need to make new ideas to be global, international and computer friendly. Forget about the old cultural differences that caused a lot of problems. Most of the people don't know there are a lot of different calendars used around the world and in the history. They just need one calendar and they will be happy until someone tries to change it.  
- 
-First we need a new name because week has constantly 7 days. The new word should be "fullweek" abbreviated to "fw".  It starts working on monday and ends sunday to rest after a week of work.  
-The weekday is already inside the new date format as a number: 1d is monday and 7d is sunday. So no more unknown weekday. And having a numeric value for weekday is way better that words that are different in different languages and cultures.  
 
-Quarters for business reports are very easily calculated: 52 fullweeks / 4 = 13 fullweeks per quarter.  
-The use of months should disappear in official life.  Sure people will use it in some cultural context in their private life just like we use zodiac signs in astrology today.
-Instead of a month, some things would be calculated in intervals of 4 fullweeks. That makes exactly 13 four-weeks intervals in a year. That is very close to the old notion of "month".  
+First we need a new name because classic week has constantly 7 days. The new word should be "veek" abbreviated to "v". Same-same, but different. It starts with the working monday and ends sunday to rest after a week of work.  
+The veekday is already inside the new date format as a number: 1d is monday and 7d is sunday. So no more unknown veekdays in the date format. And having a numeric value for veekday is way better that words that are different in different languages and cultures. I propose that monday, tuesday,... be renamed to 1d, 2d, 3d, 4d, 5d, 6d, 7d with pronunciation onedee, twodee, threedee, fourdee, fivedee, sixdee, sevendee.  
 
-| old month day       | new fullweek  | pronunciation                |
-| :------------------ | :------------ | :----------------            |
-| january 1st         | 01fw 1d       | fullweek one monday          |
-| january 2nd         | 01fw 2d       | fullweek one tuesday         |
-| january 7th         | 01fw 7d       | fullweek one sunday          |
-| january 8th         | 02fw 1d       | fullweek two monday          |
-| january 15th        | 03fw 1d       | fullweek three monday        |
-| january 22th        | 04fw 1d       | fullweek four monday         |
-| january 29th        | 05fw 1d       | fullweek five monday         |
-| february 5th        | 06fw 1d       | fullweek six monday          |
-| march 5th           | 10fw 1d       | fullweek ten monday          |
-| april 2nd           | 14fw 1d       | fullweek fourteen monday     |
-| may 7th             | 19fw 1d       | fullweek nineteen monday     |
-| june 4th            | 23fw 1d       | fullweek twenty three monday |
-| july 2nd            | 27fw 1d       | fullweek twenty seven monday |
-| august 6th          | 32fw 1d       | fullweek thirty two monday   |
-| september 3rd       | 36fw 1d       | fullweek thirty six monday   |
-| october 1st         | 40fw 1d       | fullweek forty monday        |
-| november 5th        | 45fw 1d       | fullweek forty five monday   |
-| december 3th        | 49fw 1d       | fullweek forty nine monday   |
-| december 31th       | 53fw 1d       | celebration day 1            |
+Quarters for business reports are very easily calculated: 52 veeks / 4 = 13 veeks per quarter.  
+Let abolish months altogether. The use of months should disappear in official life.  
+Sure people will use it in some cultural context in their private life just like we use zodiac signs in astrology today.
+Instead of a month, some things would be calculated in intervals of 4 veeks. That makes exactly 13 four-veeks intervals in a year. That is very close to the old notion of "month", but it is 13 and not 12. A big difference. So, simply don't use it.  
 
-People will probably shorten the pronunciation to "one monday", "forty nine tuesday" without repeating "fullweek" every single time.  
+| old month day       | new veek     | pronunciation            |
+| :------------------ | :----------- | :----------------        |
+| january 1st         | 01v 1d       | veek one onedee          |
+| january 2nd         | 01v 2d       | veek one twodee          |
+| january 7th         | 01v 7d       | veek one sevendee        |
+| january 8th         | 02v 1d       | veek two onedee          |
+| january 15th        | 03v 1d       | veek three onedee        |
+| january 22th        | 04v 1d       | veek four onedee         |
+| january 29th        | 05v 1d       | veek five onedee         |
+| february 5th        | 06v 1d       | veek six onedee          |
+| march 5th           | 10v 1d       | veek ten onedee          |
+| april 2nd           | 14v 1d       | veek fourteen onedee     |
+| may 7th             | 19v 1d       | veek nineteen onedee     |
+| june 4th            | 23v 1d       | veek twenty three onedee |
+| july 2nd            | 27v 1d       | veek twenty seven onedee |
+| august 6th          | 32v 1d       | veek thirty two onedee   |
+| september 3rd       | 36v 1d       | veek thirty six onedee   |
+| october 1st         | 40v 1d       | veek forty onedee        |
+| november 5th        | 45v 1d       | veek forty five onedee   |
+| december 3th        | 49v 1d       | veek forty nine onedee   |
+| december 25th       | 52v 2d       | veek fifty two twodee    |
+| december 31th       | 53v 1d       | celebration day 1        |
+
+People will probably shorten the pronunciation to "one onedee", "forty nine twodee" without repeating "veek" every single time.  
+It is very clear if a number finishes with a unit of measure. For years it should be c for CE "common era".  
+Example of a full date format:  
+`2021c 23v 3d`  
+And some more details for the format to be very explicit, correct and unambiguous:  
+
+- every number must end with a unit (c, v, d)
+- after the unit there is a space  
+- veeks are always written with 2 digits example: 01, 02,... because it make it easier to alphabetically sort dates  
 
 ## calendar forever
 
@@ -158,6 +170,11 @@ I prepared a simple spreadsheet with the new calendar. It is good forever.
 [new_calendar_forever.ods](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 [![calendar 1](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 [![calendar 2](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
+
+## Please comment
+
+It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they was born in a system and learned all the fine details.  
+Let discuss it. But most of all let strive for change for the better. All of humanity together.  
 
 ## a little rust converter program (pwa, wasm)
 
@@ -175,3 +192,5 @@ Go to the web server folder and run the server:
 `cd ~/rustprojects/new_date_time_units_and_formats/web_server_folder; basic-http-server`  
 Open the browser on:  
 <http://127.0.0.1:4000/new_date_time_units_and_formats/>  
+  
+This is a PWA application and works offline inside the browser with wasm.  

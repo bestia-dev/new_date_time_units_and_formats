@@ -50,38 +50,38 @@
                   enabled<br>
                   !!!???!!!</h2>
       </noscript>
-      <!--This content will change from the wasm code.-->
-      <div id="div_for_content" style="height: 100vh;" >
-            <div class="div_css_grid" style="grid-template-columns: 100vw; grid-template-rows: 9vh 15vh 12vh 15vh 48vh;">
-                  <div id="div_title"><span>fullweeks or millidays converter</span>
-                        <span id="span_menu" style="float:right;padding-right: 5vw;">☰</span></div>
+      <!--This content elements will change from the wasm code.-->
+      <div id="div_for_content" >
+            <div id="div_main_grid" >
+                  <div id="div_title"><span>veeks or millidays converter</span>
+                        <span id="span_menu" >☰</span></div>
                   <div id="div_input" ></div>
-                  <div id="div_toolbar">yyyy-mm-dd ---> fw</div>
+                  <div id="div_toolbar">yyyy-mm-dd ---> v</div>
                   <div id="div_output"></div>
 
-                  <div class="div_css_grid" style="grid-template-columns: 20vw 20vw 20vw 20vw 20vw; grid-template-rows: 12vh 12vh 12vh 12vh;">
+                  <div id="div_numeric_pad_grid" >
                         <div id="div_7" class="div_cell" >7</div>
                         <div id="div_8" class="div_cell" >8</div>
                         <div id="div_9" class="div_cell" >9</div>
-                        <div id="div_B" class="div_cell cell_commands" >⌫</div>
-                        <div id="div_C" class="div_cell cell_commands" >C</div>
+                        <div id="div_backspace" class="div_cell cell_commands" >⌫</div>
+                        <div id="div_clear" class="div_cell cell_commands" >C</div>
 
                         <div id="div_4" class="div_cell" >4</div>
                         <div id="div_5" class="div_cell" >5</div>
                         <div id="div_6" class="div_cell" >6</div>
                         <div id="div_today" class="div_cell" >T</div>
-                        <div id="div_minus" class="div_cell" >-</div>
+                        <div id="div_hyphen" class="div_cell" >-</div>
 
                         <div id="div_1" class="div_cell" >1</div>
                         <div id="div_2" class="div_cell" >2</div>
                         <div id="div_3" class="div_cell" >3</div>
-                        <div id="div_multiply" class="div_cell" ></div>
-                        <div id="div_divide" class="div_cell" >/</div>
+                        <div id="div_colon" class="div_cell" >:</div>
+                        <div id="div_slash" class="div_cell" >/</div>
 
                         <div id="div_0" class="div_cell" >0</div>
                         <div id="div_dot" class="div_cell" >.</div>
                         <div id="div_common_era" class="div_cell" >c</div>
-                        <div id="div_full_week" class="div_cell" >fw</div>
+                        <div id="div_veek" class="div_cell" >v</div>
                         <div id="div_day" class="div_cell cell_commands" >d</div>
 
                   </div>
@@ -91,14 +91,14 @@
       <div id="modal_01" class="w3-modal">
             <div class="w3-modal-content">
                   <div class="w3-container">
-                        <p>choose date or time conversion:</p>
-                        <p>to or from fullweeks or millidays</p>
+                        <h2>choose date or time conversion</h2>
+                        <p>to or from veeks or millidays</p>
                         <hr/>
-                        <p><span id="cnv_yf" class="span_button" >yyyy-mm-dd ---> fw</span> || <span id="cnv_fy" class="span_button">fw ---> yyyy-mm-dd</span></p>
-                        <p><span id="cnv_df" class="span_button">dd.mm.yyyy ---> fw</span> || <span id="cnv_fd" class="span_button">fw ---> dd.mm.yyyy</span></p> 
-                        <p><span id="cnv_mf" class="span_button">mm/dd/yyyy ---> fw</span> || <span id="cnv_fm" class="span_button">fw ---> mm/dd/yyyy</span></p>
+                        <p><span id="cnv_yf" class="span_button" >yyyy-mm-dd ---> v</span> || <span id="cnv_fy" class="span_button">v ---> yyyy-mm-dd</span></p>
+                        <p><span id="cnv_df" class="span_button">dd.mm.yyyy ---> v</span> || <span id="cnv_fd" class="span_button">v ---> dd.mm.yyyy</span></p> 
+                        <p><span id="cnv_mf" class="span_button">mm/dd/yyyy ---> v</span> || <span id="cnv_fm" class="span_button">v ---> mm/dd/yyyy</span></p>
                         <hr/>
-                        <p><span id="cnv_24m" class="span_button">HH:MM 24---> md</span> || <span id="cnv_m24" class="span_button">md ---> HH:MM 24</span></p>
+                        <p><span id="cnv_24m" class="span_button">HH:MM 24 ---> md</span> || <span id="cnv_m24" class="span_button">md ---> HH:MM 24</span></p>
                         <p><span id="cnv_12m" class="span_button">HH:MM 12 ---> md</span> || <span id="cnv_m12" class="span_button">md ---> HH:MM 12</span></p>
                         <hr/>
                         <p><span id="cnv_sm" class="span_button">seconds ---> μd</span> || <span id="cnv_ms" class="span_button">μd ---> seconds</span></p>
@@ -109,13 +109,13 @@
             <div class="w3-modal-content">
                   <div class="w3-container">
                         <h2>About</h2>
-                        <p>Explanation of new units "fullweek" and "millidays" on github:</p>
+                        <p>Explanation of new units "veeks" and "millidays" on github:</p>
                         <p><a href="https://github.com/LucianoBestia/new_date_time_units_and_formats" target="_blank" >new_date_time_units_and_formats</a></p>
-                        <p>Description of existing date formats by countries:</p>
-                        <p><a href="https://en.wikipedia.org/wiki/Date_format_by_country" target="_blank" >Date format by country</a></p>
+                        <p>This PWA app is made for mobile browsers. In desktop use F12 developer mode and choose a mobile format.</p>
+                        <p></p>
                         <p>OpenSource MIT license</p>
                         <p>© 2021 Luciano Bestia</p>
-                        <p id="modal_02_close">[Close]</p>
+                        <p><span class="span_button" id="modal_02_close">Close</span></p>
                   </div>
             </div>
       </div>
