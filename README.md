@@ -35,7 +35,7 @@ Later on it is more and more difficult to learn and change.
 And because we live in a multi-generational society this "old" traditions are really tough to change.  
 There is always somebody who is unable to learn the new stuff. This is our biology. We are only humans.  
 And then there is always some tribal feelings that one group wants to be different from another group. Prehistoric baggage.  
-But it has already happen many times in history that people changed their units of measurement and formats. So there is a glimpse of hope.
+But it has already happened many times in history that people changed their units of measurement and formats. So there is a glimpse of hope.
 
 ## hours and minutes into millidays
 
@@ -49,7 +49,8 @@ A milliday is similar to a minute. One day has 1440 minutes or 1000 millidays.
 This means that 1 milliday = 1.44 minutes and 1 minute = 0.69444 millidays.  
 We could approximate it for easy mental calculations 1 milliday approx. 1.5 minute and 1 minute approx. 0.66 millidays.
 We don't really need hours. They are redundant and relics from the past. We could use millidays instead of hours in any scenario: 1 hour = 41.66 millidays.  
-In the distant past humans were not accustomed to bigger numbers than 60. But today we use bigger numbers in everyday life. At least for money counting. Who doesn't know how to count to 1000 dollars?  
+In the distant past humans were not accustomed to bigger numbers than 12. You can still here people avoiding big numbers: half past ten AM instead of 10:30, a quarter to eight PM instead of 19:45,...
+But today we use bigger numbers in everyday life. At least for money counting. Who doesn't know how to count to 1000 dollars?  
 For most practical scenarios it is enough to define time with precisions rounded to 1 minute or 1 milliday.  
 This is the formula: millidays = 1000/24\*hours + 1000/(24\*60)\*minutes  
 The pronunciation is very similar to what is called "military time" in english.  
@@ -57,48 +58,51 @@ People will probably shorten millidays to simply "millis".
 
 | old hour:minute | new milliday | pronunciation                       |
 | :-------------- | :----------- | :---------------------------------- |
-| 00:00           | 000 md       | zero millidays (midnight)           |
-| 06:00           | 250 md       | two fifty millidays                 |
-| 12:00           | 500 md       | five hundred millidays (midday)     |
-| 18:00           | 750 md       | seven fifty millidays               |
-| 23:59           | 999 md       | nine ninety nine millidays          |
+| 00:00           | 000 md       | zero millis (midnight)           |
+| 06:00           | 250 md       | two fifty millis                 |
+| 12:00           | 500 md       | five hundred millis (midday)     |
+| 18:00           | 750 md       | seven fifty millis               |
+| 23:59           | 999 md       | nine ninety nine millis          |
 | 09:00 - 17:00   | 375 - 708 md | three seventy five to seven hundred |
 | 12:00 - 13:00   | 500 - 542 md | five hundred to five forty two      |
 | 20:00 - 22:00   | 833 - 917 md | eight thirty to nine seventeen      |
 
-It is just the same for time intervals. We could say:
+It is just the same for time intervals. Today a lot of events are rounded to hours, because this is what we use, but in the future they will be rounded to millidays. I call this a cultural shift to the new unit of measure.  
+We could say:
 
-| old hour:minute     | new milliday                 |
-| :------------------ | :--------------------------- |
-| "I work 8 hours"    | "I work 333 millidays"       |
-| "Wait 5 minutes"    | "Wait 4 millidays"           |
-| "Wait 15 minutes"   | "Wait 10 millidays"          |
-| "Drive 1 hour"      | "Drive 42 millidays"         |
-| "Movie length 1:30" | "Movie length 62 millidays"  |
-| "Cook 2 hours"      | "Cook 83 millidays"          |
+| old hour:minute     | new milliday              | after a cultural shift    |
+| :------------------ | :------------------------ | :------------------------ |
+| "I work 8 hours"    | "I work 333 millis"       | "I work 300 millis"       |
+| "Wait 5 minutes"    | "Wait 4 millis"           | "Wait 5 millis"           |
+| "Wait 15 minutes"   | "Wait 10 millis"          | "Wait 10 millis"          |
+| "Drive 1 hour"      | "Drive 42 millis"         | "Drive 40 millis"         |
+| "Movie length 1:30" | "Movie length 62 millis"  | "Movie length 60 millis"  |
+| "Cook 2 hours"      | "Cook 83 millis"          | "Cook 80 millis"          |
 
 Today we are biased with the old units, and to us the new units look strange.
 But for a new generation it will be just logical and simple. Just one single unit. Nothing to think a lot about it.
 
-## seconds into decimals of milliday
+## seconds into microdays
 
 For very precise measurements today we use seconds and decimals of a second.  
-With millidays we can just use decimals of a milliday.  
-milliseconds, nanoseconds,... can be converted into microdays, nanodays, picodays,... just follow the SI rules and use what is convenient.  
+With millidays we can just use decimals of a milliday or use smaller units like microdays, nanodays, picodays,... just follow the SI rules and use what is convenient.  
 This is the formula: millidays = 1000/(24\*60\*60)\*seconds
 Probably people will shorten microdays to "micros".
 
 | old seconds     | new milliday | new microdays |
 | --------------: | -----------: | ------------: |
-| 1 s             | 0.012 md     | 12 microdays  |
+| 1 s             | 0.012 md     | 12 μd         |
 | 10 s            | 0.116 md     | 116 μd        |
 | 10.44 s         | 0.120833 md  | 120.833 μd    |
 | 30 s            | 0.347 md     | 347 μd        |
 | 60 s            | 0.694 md     | 694 μd        |
+| 86.4 s          | 1 md         | 1000 μd       |
 
 The "second" is the base unit of time in the International System of Units (SI). This is unfortunate. It will probably never change.  
 The "second" is defined by taking the fixed numerical value of the caesium frequency ∆νCs, the unperturbed ground-state hyperfine transition frequency of the caesium-133 atom, to be 9192631770 when expressed in the unit Hz.  
-  
+From this definition we can see that it is arbitrary and we can define a milliday the same way:  
+1 milliday = 9192631770 * 86.4 = 794243384928 ∆νCs
+
 ## months and days into veeks and veekdays
 
 One year has approximately 365 days that are divided into 12 months. A group of 7 days is called a week.  
@@ -162,7 +166,8 @@ And some more details for the format to be very explicit, correct and unambiguou
 
 - every number must end with a unit (c, v, d)
 - after the unit there is a space  
-- veeks are always written with 2 digits example: 01, 02,... because it make it easier to alphabetically sort dates  
+- veeks are always written with 2 digits example: 01, 02,... because it makes it easier to alphabetically sort dates  
+- years are always in 4 digits. The new date format is not suitable for ancient dates before 1000c , but neither is the current calendar. Historians use other types of calendars for the far past.  
 
 ## calendar forever
 
