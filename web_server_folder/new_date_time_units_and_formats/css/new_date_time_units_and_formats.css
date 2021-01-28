@@ -24,6 +24,12 @@ html {
     background-color: var(--b_color_body);
     color: var(--f_color_body);
     height: 100vh;
+    /*this is mobile only portrait only game. Only between 300 and 600px*/
+    max-width: 600px;
+    min-width: 300px;
+    user-select: none;
+    /*margin auto means centered horizontally*/
+    margin: auto;
 }
 
 body {

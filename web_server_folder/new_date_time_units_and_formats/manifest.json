@@ -1,6 +1,6 @@
 {
-    "short_name": "clock",
-    "name": "new_date_time_units_and_formats",
+    "short_name": "veeks & millis converter",
+    "name": "veeks & millis converter",
     "icons": [
         {
             "src": "icons/android-icon-36x36.png",
@@ -45,8 +45,8 @@
         }
     ],
     "start_url": "/new_date_time_units_and_formats/index.html",
-    "background_color": "#000000",
+    "background_color": "#FFFFFF",
     "display": "standalone",
     "orientation": "portrait",
-    "theme_color": "#000000"
+    "theme_color": "#FFFFFF"
 }
