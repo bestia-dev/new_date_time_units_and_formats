@@ -53,8 +53,7 @@ In the distant past humans were not accustomed to bigger numbers than 12. You ca
 But today we use bigger numbers in everyday life. At least for money counting. Who doesn't know how to count to 1000 dollars?  
 For most practical scenarios it is enough to define time with precisions rounded to 1 minute or 1 milliday.  
 This is the formula: millidays = 1000/24\*hours + 1000/(24\*60)\*minutes  
-The pronunciation is very similar to what is called "military time" in english.  
-People will probably shorten millidays to simply "millis".
+People will probably shorten `millidays` to simply `millis`.
 
 | old hour:minute | new milliday | pronunciation                       |
 | :-------------- | :----------- | :---------------------------------- |
@@ -63,11 +62,11 @@ People will probably shorten millidays to simply "millis".
 | 12:00           | 500 md       | five hundred millis (midday)     |
 | 18:00           | 750 md       | seven fifty millis               |
 | 23:59           | 999 md       | nine ninety nine millis          |
-| 09:00 - 17:00   | 375 - 708 md | three seventy five to seven hundred |
+| 09:00 - 17:00   | 375 - 700 md | three seventy five to seven hundred |
 | 12:00 - 13:00   | 500 - 542 md | five hundred to five forty two      |
-| 20:00 - 22:00   | 833 - 917 md | eight thirty to nine seventeen      |
+| 20:00 - 22:00   | 830 - 917 md | eight thirty to nine seventeen      |
 
-It is just the same for time intervals. Today a lot of events are rounded to hours, because this is what we use, but in the future they will be rounded to millidays. I call this a cultural shift to the new unit of measure.  
+It is just the same for time intervals. Today a lot of events are rounded to hours, because this is what we have, but in the future they will be rounded to millidays. I call this a cultural shift to the new unit of measure.  
 We could say:
 
 | old hour:minute     | new milliday              | after a cultural shift    |
@@ -87,7 +86,7 @@ But for a new generation it will be just logical and simple. Just one single uni
 For very precise measurements today we use seconds and decimals of a second.  
 With millidays we can just use decimals of a milliday or use smaller units like microdays, nanodays, picodays,... just follow the SI rules and use what is convenient.  
 This is the formula: millidays = 1000/(24\*60\*60)\*seconds
-Probably people will shorten microdays to "micros".
+Probably people will shorten `microdays` to `micros`.
 
 | old seconds     | new milliday | new microdays |
 | --------------: | -----------: | ------------: |
@@ -120,15 +119,21 @@ The classic week contains 7 days. In history there was an attempt to change it t
 
 There are 52 full weeks in a year, that makes 364 days. Every year, there is 1 day left except every 4 year are 2 days except every 100 are again 1 day and every 400 years 2 days. What to do with this 1 or 2 days at the end of the year?  
 
-CELEBRATION DAYS ! Let celebrate the new year !  
+**CELEBRATION DAYS ! Let celebrate the new year !**  
 
-Celebrate for one day or sometimes for 2 days. Most people already celebrates New Years Eve in this fashion.  
+Celebrate for one day or sometimes for 2 days. Most people already celebrate New Years Eve in this fashion.  
 This means that every year will start with a monday. Forever. No need for a new calendar. 52 full weeks always the same.  
 Simple.  
-We need to make new ideas to be global, international and computer friendly. Forget about the old cultural differences that caused a lot of problems. Most of the people don't know there are a lot of different calendars used around the world and in the history. They just need one calendar and they will be happy until someone tries to change it.  
+We need to make new ideas to be global, international and computer friendly. Forget about the old cultural differences that caused a lot of problems. Most of the people don't know there are a lot of different calendars used around the world today and even more  in the past. They just need one calendar and they will be just happy until someone tries to change it.  
 
 First we need a new name for disambiguation because the classic week has constantly 7 days. The new word should be "veek" abbreviated to "v". Same-same, but different. It starts with the working monday and ends sunday to rest after a week of work.  
-The veekday is already inside the new date format as a number: 1d is monday and 7d is sunday. So no more unknown veekdays in the date format. And having a numeric value for veekday is way better that words that are different in different languages and cultures. I propose that monday, tuesday,... be renamed to 1d, 2d, 3d, 4d, 5d, 6d, 7d with pronunciation onedee, twodee, threedee, fourdee, fivedee, sixdee, sevendee.  
+The veekday is already inside the new date format as a number: 1d is monday and 7d is sunday. So no more unknown veekdays in the date format. And having a numeric value for veekday is way better than words that are different in every languages or cultures today.  
+
+> Estimates of the number of human languages in the world vary between 5000 and 7000.
+>
+> -- <cite>https://en.wikipedia.org/wiki/Language</cite>
+
+I propose that monday, tuesday,... be renamed to 1d, 2d, 3d, 4d, 5d, 6d, 7d with pronunciation one-dee, two-dee, three-dee, four-dee, five-dee, six-dee, seven-dee.  
 
 Quarters for business reports are very easily calculated: 52 veeks / 4 = 13 veeks per quarter.  
 Let abolish months altogether. The use of months should disappear in official life.  
@@ -137,66 +142,74 @@ Instead of a month, some things would be calculated in intervals of 4 veeks. Tha
 
 | old month day       | new veek     | pronunciation            |
 | :------------------ | :----------- | :----------------        |
-| january 1st         | 01v 1d       | veek one onedee          |
-| january 2nd         | 01v 2d       | veek one twodee          |
-| january 7th         | 01v 7d       | veek one sevendee        |
-| january 8th         | 02v 1d       | veek two onedee          |
-| january 15th        | 03v 1d       | veek three onedee        |
-| january 22th        | 04v 1d       | veek four onedee         |
-| january 29th        | 05v 1d       | veek five onedee         |
-| february 5th        | 06v 1d       | veek six onedee          |
-| march 5th           | 10v 1d       | veek ten onedee          |
-| april 2nd           | 14v 1d       | veek fourteen onedee     |
-| may 7th             | 19v 1d       | veek nineteen onedee     |
-| june 4th            | 23v 1d       | veek twenty three onedee |
-| july 2nd            | 27v 1d       | veek twenty seven onedee |
-| august 6th          | 32v 1d       | veek thirty two onedee   |
-| september 3rd       | 36v 1d       | veek thirty six onedee   |
-| october 1st         | 40v 1d       | veek forty onedee        |
-| november 5th        | 45v 1d       | veek forty five onedee   |
-| december 3th        | 49v 1d       | veek forty nine onedee   |
-| december 25th       | 52v 2d       | veek fifty two twodee    |
-| december 31th       | 53v 1d       | celebration onedee       |
+| january 1st         | 01v 1d       | veek one one-dee          |
+| january 2nd         | 01v 2d       | veek one two-dee          |
+| january 7th         | 01v 7d       | veek one seven-dee        |
+| january 8th         | 02v 1d       | veek two one-dee          |
+| january 15th        | 03v 1d       | veek three one-dee        |
+| january 22th        | 04v 1d       | veek four one-dee         |
+| january 29th        | 05v 1d       | veek five one-dee         |
+| february 5th        | 06v 1d       | veek six one-dee          |
+| march 5th           | 10v 1d       | veek ten one-dee          |
+| april 2nd           | 14v 1d       | veek fourteen one-dee     |
+| may 7th             | 19v 1d       | veek nineteen one-dee     |
+| june 4th            | 23v 1d       | veek twenty three one-dee |
+| july 2nd            | 27v 1d       | veek twenty seven one-dee |
+| august 6th          | 32v 1d       | veek thirty two one-dee   |
+| september 3rd       | 36v 1d       | veek thirty six one-dee   |
+| october 1st         | 40v 1d       | veek forty one-dee        |
+| november 5th        | 45v 1d       | veek forty five one-dee   |
+| december 3th        | 49v 1d       | veek forty nine one-dee   |
+| december 25th       | 52v 2d       | veek fifty two two-dee    |
+| december 31th       | 53v 1d       | celebration one-dee       |
 
-People will probably shorten the pronunciation to "one onedee", "forty nine twodee" without repeating "veek" every single time.  
-It is very clear if a number finishes with a unit of measure. For years it should be `c` for `CE` - "common era".  
-Example of a full date format with veeks:  
+People will probably shorten the pronunciation to `one one-dee`, `forty nine two-dee` without repeating `veek` every single time.  
+It is very clear if a number finishes with a unit of measure.  
+For years it should be `c` for `CE - common era`, example:  
+`2021c`  
+to disambiguate from the buddhist (2564 B.E.) or islamic year (1442 AH) and [other years](https://en.wikipedia.org/wiki/Calendar_era).  
+Example of a global full date format with veeks:  
 `2021c 23v 3d`  
-And some more details for the format to be very explicit, correct and unambiguous:  
+Now for fun, compare this to one of the many formats today:  
+`9.6.2021 tuesday`  
+And some more details for the single global format to be very explicit, correct and unambiguous:  
 
-- every number must end with a unit (c, v, d)
+- every number must end with a unit (c, v, d - year CE, veek, day)
 - after the unit there is a space  
-- veeks are always written with 2 digits example: 01, 02,... because it makes it easier to alphabetically sort dates  
+- veeks are always written with 2 digits example: 01, 02,... because it makes it easier to alphabetically sort dates and never confuse with days  
+- days are always one single digit, from 1 to 7
 - years are always in 4 digits. The new date format is not suitable for ancient dates before 1000c , but neither is the current calendar. Historians use other types of calendars for the far past.  
 
-## calendar forever
+## veek calendar forever
 
-I prepared a simple spreadsheet with the new veek calendar. It is good forever.
+I prepared a simple spreadsheet with the new `veek calendar`.  
+It is good forever: 
 [new_calendar_forever.ods](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
+Actually it is so simple, you don't need a calendar, you already know it using simple logic.  
 [![calendar 1](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 [![calendar 2](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 
 ## Please comment
 
-It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they was born in a system and learned all the fine details over time. The cultural change to the new system will require a change of a generation. Children that learn the new system early will see the old system as archaic, complicated and not easily understandable.  
+It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they were born in a system and learned all the fine details over time. The cultural change to the new system will require a change of a generation. Children that learn the new system early will see the old system as archaic, complicated and not easily understandable.  
 Let discuss it. But most of all let strive for change for the better. All of humanity together.  
 
-## a little rust converter program (pwa, wasm) for mobile
+## Development of a little rust converter program (pwa, wasm) for mobile
 
 Install some utilities:  
-`cargo install cargo-make`
-`cargo install lmake_version_from_date`
-`cargo install basic-http-server`
+`cargo install cargo-make`  
+`cargo install lmake_version_from_date`  
+`cargo install basic-http-server`  
 Run  
-`cargo make` - for help
-Run
+`cargo make` - for help  
+Run  
 `cargo make release` - build the wasm pkg  
 
-Run the web server in a separate terminal so it can stay running all the time.
+Run the web server in a separate terminal so it can stay running all the time.  
 Go to the web server folder and run the server:  
 `cd ~/rustprojects/new_date_time_units_and_formats/web_server_folder; basic-http-server`  
 Open the browser on:  
 <http://127.0.0.1:4000/new_date_time_units_and_formats/>  
   
 This is a PWA application and works offline inside the browser with wasm.  
-It is made for mobile browsers. In the desktop browser press F12 and choose  mobile format.  
+It is made for mobile browsers. In the desktop browser press F12 and choose a  mobile format.  
