@@ -23,9 +23,9 @@
 ## Try it
 
 <https://bestia.dev/new_date_time_units_and_formats/>  
-![icon](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/icons/android-icon-96x96.png)
-![screenshot_01](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_01.png)
-![screenshot_02](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_02.png)
+![icon](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/icons/android-icon-96x96.png)  
+![screenshot_01](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_01s.png)
+![screenshot_02](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_02s.png)
 ![screenshot_03](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_03s.png)
 ![screenshot_04](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_04s.png)
 
