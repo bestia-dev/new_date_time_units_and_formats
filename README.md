@@ -24,10 +24,10 @@
 
 <https://bestia.dev/new_date_time_units_and_formats/>  
 ![icon](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/icons/android-icon-96x96.png)  
-![screenshot_01](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_01s.png)
-![screenshot_02](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_02ss.png)
-![screenshot_03](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_03s.png)
-![screenshot_04](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_04s.png)
+![screenshot_01](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_01s1.png)
+![screenshot_02](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_02s1.png)
+![screenshot_03](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_03s1.png)
+![screenshot_04](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_04s1.png)
 
 ## Proposal for a new date and time units and formats
 
