@@ -167,7 +167,7 @@ People will probably shorten the pronunciation to `one one-dee`, `forty nine two
 It is very clear if a number finishes with a unit of measure.  
 For years it should be `c` for `CE - common era`, example:  
 `2021c`  
-to disambiguate from the buddhist (2564 B.E.) or islamic year (1442 AH) and [other years](https://en.wikipedia.org/wiki/Calendar_era).  
+to disambiguate from the buddhist year (2564 B.E.), islamic year (1442 AH), Chinese year (4718) and [other years](https://allthatsinteresting.com/what-year-is-it).  
 Example of a global full date format with veeks:  
 `2021c 23v 3d`  
 Now for fun, compare this to one of the many formats today:  
