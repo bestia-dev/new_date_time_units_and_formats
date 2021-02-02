@@ -192,6 +192,11 @@ Actually it is so simple, you don't need a calendar, you already know it using s
 [![calendar 1](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 [![calendar 2](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 
+## crate library veeks_millis
+
+I separated the functions for veeks and millis conversion into a crate and published it to crates.io:  
+<https://crates.io/crates/veeks_millis>  
+
 ## Please comment
 
 It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they were born in a system and learned all the fine details over time. The cultural change to the new system will require a change of a generation. Children that learn the new system early will see the old system as archaic, complicated and not easily understandable.  
