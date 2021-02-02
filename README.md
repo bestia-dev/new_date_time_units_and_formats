@@ -134,7 +134,7 @@ The veekday is already inside the new date format as a number: 1d is monday and 
 
 > Estimates of the number of human languages in the world vary between 5000 and 7000.
 >
-> -- <cite>https://en.wikipedia.org/wiki/Language</cite>
+> https://en.wikipedia.org/wiki/Language  
 
 I propose that monday, tuesday,... be renamed to 1d, 2d, 3d, 4d, 5d, 6d, 7d with pronunciation one-dee, two-dee, three-dee, four-dee, five-dee, six-dee, seven-dee.  
 
@@ -186,7 +186,7 @@ And some more details for the single global format to be very explicit, correct 
 ## veek calendar forever
 
 I prepared a simple spreadsheet with the new `veek calendar`.  
-It is good forever: 
+It is good forever:  
 [new_calendar_forever.ods](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 Actually it is so simple, you don't need a calendar, you already know it using simple logic.  
 [![calendar 1](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
