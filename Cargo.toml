@@ -1,6 +1,6 @@
 [package]
 name = "new_date_time_units_and_formats"
-version = "2021.127.1641"
+version = "2021.202.1820"
 authors = ["Luciano Bestia <Luciano.Bestia@gmail.com>"]
 edition = "2018"
 description = "my proposal for a new date time units and formats"
@@ -16,6 +16,10 @@ publish = false
 crate-type = ["cdylib"]
 
 [dependencies]
+# my crates from crates.io
+veeks_millis = "0.5.5"
+
+# third party crates
 unwrap = "1.2.1"
 wasm-bindgen = { version = "0.2.69", features = ["serde-serialize"] }
 console_error_panic_hook = "0.1.6"

@@ -7,10 +7,9 @@ use chrono::{NaiveDate, NaiveTime};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::{JsCast, JsValue};
 
-mod veeks_millis_mod;
-mod web_sys_mod;
+use veeks_millis;
 
-use veeks_millis_mod::*;
+mod web_sys_mod;
 use web_sys_mod::*;
 
 #[wasm_bindgen(start)]
@@ -76,7 +75,7 @@ pub fn set_event_handlers() {
     on_click!("cnv_sm", cnv_on_click, "cnv_sm");
     on_click!("cnv_ms", cnv_on_click, "cnv_ms");
 
-    on_click!("span_menu", menu_on_click);
+    on_click!("span_hamburger_button", menu_on_click);
     on_click!("modal_02_close", modal_02_close_on_click);
 }
 
@@ -87,11 +86,14 @@ pub fn convert() {
 
     match conversion {
         "yyyy-mm-dd ---> v" => match NaiveDate::parse_from_str(&value_orig, "%Y-%m-%d") {
-            Ok(naive_date) => set_text("div_output", &naive_date_to_veek(naive_date)),
+            Ok(naive_date) => set_text(
+                "div_output",
+                &veeks_millis::naive_date_to_veek_date(naive_date),
+            ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "v ---> yyyy-mm-dd" => {
-            let nd = veek_to_naive_date(&value_orig);
+            let nd = veeks_millis::veek_to_naive_date_opt(&value_orig);
             match nd {
                 Some(naive_date) => set_text(
                     "div_output",
@@ -101,11 +103,14 @@ pub fn convert() {
             }
         }
         "dd.mm.yyyy ---> v" => match NaiveDate::parse_from_str(&value_orig, "%d.%m.%Y") {
-            Ok(naive_date) => set_text("div_output", &naive_date_to_veek(naive_date)),
+            Ok(naive_date) => set_text(
+                "div_output",
+                &veeks_millis::naive_date_to_veek_date(naive_date),
+            ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "v ---> dd.mm.yyyy" => {
-            let nd = veek_to_naive_date(&value_orig);
+            let nd = veeks_millis::veek_to_naive_date_opt(&value_orig);
             match nd {
                 Some(naive_date) => set_text(
                     "div_output",
@@ -115,11 +120,14 @@ pub fn convert() {
             }
         }
         "mm/dd/yyyy ---> v" => match NaiveDate::parse_from_str(&value_orig, "%m/%d/%Y") {
-            Ok(naive_date) => set_text("div_output", &naive_date_to_veek(naive_date)),
+            Ok(naive_date) => set_text(
+                "div_output",
+                &veeks_millis::naive_date_to_veek_date(naive_date),
+            ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "v ---> mm/dd/yyyy" => {
-            let nd = veek_to_naive_date(&value_orig);
+            let nd = veeks_millis::veek_to_naive_date_opt(&value_orig);
             match nd {
                 Some(naive_date) => set_text(
                     "div_output",
@@ -129,14 +137,17 @@ pub fn convert() {
             }
         }
         "HH:MM 24 ---> md" => match NaiveTime::parse_from_str(&value_orig, "%H:%M") {
-            Ok(naive_time) => set_text("div_output", &naive_time_to_millis(naive_time)),
+            Ok(naive_time) => set_text(
+                "div_output",
+                &veeks_millis::naive_time_to_millis_str(naive_time),
+            ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "md ---> HH:MM 24" => {
-            let millis = millis_from_str_opt(&value_orig);
+            let millis = veeks_millis::millis_from_str_opt(&value_orig);
             match millis {
                 Some(millis) => {
-                    let nt = millis_to_naive_time(millis);
+                    let nt = veeks_millis::millis_to_naive_time_opt(millis);
                     match nt {
                         Some(naive_time) => set_text(
                             "div_output",
@@ -149,14 +160,17 @@ pub fn convert() {
             }
         }
         "HH:MM 12 ---> md" => match NaiveTime::parse_from_str(&value_orig, "%I:%M %p") {
-            Ok(naive_time) => set_text("div_output", &naive_time_to_millis(naive_time)),
+            Ok(naive_time) => set_text(
+                "div_output",
+                &veeks_millis::naive_time_to_millis_str(naive_time),
+            ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "md ---> HH:MM 12" => {
-            let millis = millis_from_str_opt(&value_orig);
+            let millis = veeks_millis::millis_from_str_opt(&value_orig);
             match millis {
                 Some(millis) => {
-                    let nt = millis_to_naive_time(millis);
+                    let nt = veeks_millis::millis_to_naive_time_opt(millis);
                     match nt {
                         Some(naive_time) => set_text(
                             "div_output",
@@ -173,7 +187,7 @@ pub fn convert() {
             let seconds = f64::from_str(&value_orig);
             match seconds {
                 Ok(seconds) => {
-                    let micros = seconds_to_micros(seconds);
+                    let micros = veeks_millis::seconds_to_micros(seconds);
                     // format to 3 decimal places
                     let micros = format!(r#"{:.3}μd"#, micros);
                     set_text("div_output", &micros);
@@ -182,10 +196,10 @@ pub fn convert() {
             }
         }
         "μd ---> seconds" => {
-            let micros = micros_from_str_opt(&value_orig);
+            let micros = veeks_millis::micros_from_str_opt(&value_orig);
             match micros {
                 Some(micros) => {
-                    let seconds = micros_to_seconds(micros);
+                    let seconds = veeks_millis::micros_to_seconds(micros);
                     // format to 3 decimal places
                     let seconds = format!("{:.3}", seconds);
                     set_text("div_output", &seconds);
@@ -249,7 +263,10 @@ pub fn div_now_on_click() {
     let conversion = get_text("div_toolbar");
 
     if conversion.starts_with("v") {
-        set_text("div_input", &naive_date_to_veek(now_date));
+        set_text(
+            "div_input",
+            &veeks_millis::naive_date_to_veek_date(now_date),
+        );
     } else if conversion.starts_with("yyyy-mm-dd") {
         set_text(
             "div_input",
@@ -273,7 +290,10 @@ pub fn div_now_on_click() {
             now_time.format("%I:%M %p").to_string().as_ref(),
         );
     } else if conversion.starts_with("md") {
-        set_text("div_input", &naive_time_to_millis(now_time));
+        set_text(
+            "div_input",
+            &veeks_millis::naive_time_to_millis_str(now_time),
+        );
     } else if conversion.starts_with("μd") {
         set_text("div_input", "110.880μd");
     } else if conversion.starts_with("seconds") {
@@ -308,7 +328,7 @@ pub fn cnv_on_click(element_id: &str) {
 
     match conversion.as_ref() {
         "yyyy-mm-dd ---> v" => {
-            debug_write("cnv_on_click yyyy-mm-dd ---> v");
+            // debug_write("cnv_on_click yyyy-mm-dd ---> v");
             get_element_by_id("div_hyphen").set_class_name("div_cell");
         }
         "v ---> yyyy-mm-dd" => {

@@ -27,15 +27,17 @@ html {
     /*this is mobile only portrait only game. Only between 300 and 600px*/
     max-width: 600px;
     min-width: 300px;
-    user-select: none;
     /*margin auto means centered horizontally*/
     margin: auto;
+    user-select: none;
 }
 
 body {
     height: 100vh;
-    padding: 0;
-    margin:0;
+}
+
+a{
+    cursor: pointer;
 }
 
 #div_for_content{
@@ -51,7 +53,6 @@ body {
 }
 
 #div_title{
-    pointer-events: none;
     font-size: 20px;
     background-color:var(--b_color_title);
     color:var(--f_color_title);
@@ -59,27 +60,28 @@ body {
     padding-left: 3vw;
 }
 
-#span_menu{
-    pointer-events: all;
+#span_hamburger_button{
+    cursor: pointer;
     float:right;
     padding-right: 5vw;
 }
 
-#div_input{pointer-events: none;
+#div_input{
     font-size: 30px;
     line-height: 15vh;
     padding-left: 3vw;
     background-color: var(--b_color_input_output);
 }
+
 #div_toolbar{
-    pointer-events: all;
+    cursor: pointer;
     font-size: 20px;
     background-color:var(--b_color_toolbar);
     line-height: 12vh;
     padding-left: 3vw;
 }
+
 #div_output{
-    pointer-events: none;
     font-size: 30px;
     line-height: 15vh;
     padding-left: 3vw;
@@ -95,7 +97,7 @@ body {
 }
 
 .div_cell {
-    pointer-events: all;
+    cursor: pointer;
     text-align: center;
     line-height: 12vh;
     background-color:var(--b_color_cell);
@@ -113,7 +115,8 @@ body {
 }
 
 .cell_disabled {
-    pointer-events: none;
+    cursor: auto;
+    pointer-events: none; /* this is not the true property to make element disabled*/
     background-color:var(--b_color_cell_disabled);
     color: var(--f_color_cell_disabled);
 }
@@ -141,6 +144,7 @@ body {
 }
 
 .span_button{
+    cursor: pointer;
     border: 1pt;
     border-style: solid;
     background-color:var(--b_color_toolbar);

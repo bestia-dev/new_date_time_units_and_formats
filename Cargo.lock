@@ -100,13 +100,14 @@ checksum = "0ee1c47aaa256ecabcaea351eae4a9b01ef39ed810004e298d2511ed284b1525"
 
 [[package]]
 name = "new_date_time_units_and_formats"
-version = "2021.127.1641"
+version = "2021.202.1820"
 dependencies = [
  "chrono",
  "console_error_panic_hook",
  "js-sys",
  "regex",
  "unwrap",
+ "veeks_millis",
  "wasm-bindgen",
  "wasm-bindgen-test",
  "web-sys",
@@ -244,6 +245,17 @@ name = "unwrap"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7e33648dd74328e622c7be51f3b40a303c63f93e6fa5f08778b6203a4c25c20f"
+
+[[package]]
+name = "veeks_millis"
+version = "0.5.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "39a41ff1793d0bf3bb8a1d09c1dc9dcc8ce7bd39bfb77960db8b97f1dcc78340"
+dependencies = [
+ "chrono",
+ "regex",
+ "unwrap",
+]
 
 [[package]]
 name = "wasi"
