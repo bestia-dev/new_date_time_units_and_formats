@@ -192,10 +192,9 @@ Actually it is so simple, you don't need a calendar, you already know it using s
 [![calendar 1](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 [![calendar 2](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 
-## crate library veeks_millis
+## Dependency
 
-I separated the functions for veeks and millis conversion into a crate and published it to crates.io:  
-<https://crates.io/crates/veeks_millis>  
+<https://github.com/LucianoBestia/veeks_millis>  
 
 ## Please comment
 
