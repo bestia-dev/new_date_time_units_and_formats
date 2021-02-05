@@ -32,6 +32,7 @@ pub fn wasm_bindgen_start() -> Result<(), JsValue> {
     Ok(())
 }
 
+/// set event handlers with macros
 pub fn set_event_handlers() {
     on_click!("div_1", div_cell_multi_value_on_click, "div_1");
     on_click!("div_2", div_cell_multi_value_on_click, "div_2");
@@ -80,6 +81,7 @@ pub fn set_event_handlers() {
     on_click!("modal_02_close", modal_02_close_on_click);
 }
 
+/// converts from different units of measure
 pub fn convert() {
     let value_orig = get_text("div_input");
     let conversion = get_text("div_toolbar");
@@ -212,6 +214,7 @@ pub fn convert() {
     }
 }
 
+/// event handler
 pub fn div_cell_on_click(text: &str) {
     let input_text = get_text("div_input");
     // the single space after c or v
@@ -223,6 +226,7 @@ pub fn div_cell_on_click(text: &str) {
     convert();
 }
 
+/// event handler
 pub fn div_cell_multi_value_on_click(element_id: &str) {
     let input_text = get_text("div_input");
     let text = get_text(element_id);
@@ -239,6 +243,7 @@ pub fn div_cell_multi_value_on_click(element_id: &str) {
     convert();
 }
 
+/// event handler
 pub fn div_backspace_on_click() {
     let mut text = get_text("div_input");
     if !text.is_empty() {
@@ -248,11 +253,13 @@ pub fn div_backspace_on_click() {
     }
 }
 
+/// event handler
 pub fn div_c_on_click() {
     set_text("div_input", "");
     convert();
 }
 
+/// event handler
 pub fn div_now_on_click() {
     let now_js = js_sys::Date::new_0();
     let now_time = NaiveTime::from_hms(now_js.get_hours(), now_js.get_minutes(), 0);
@@ -303,11 +310,12 @@ pub fn div_now_on_click() {
     convert();
 }
 
-/// open modal div
+/// event handler open modal div
 pub fn toolbar_on_click() {
     modal_open("modal_01");
 }
 
+/// event handler
 pub fn cnv_on_click(element_id: &str) {
     let conversion = get_text(element_id);
     set_text("div_toolbar", &conversion);
@@ -395,11 +403,12 @@ pub fn cnv_on_click(element_id: &str) {
     convert();
 }
 
-/// open modal div
+/// event handler - open modal div
 pub fn menu_on_click() {
     modal_open("modal_02");
 }
 
+/// event handler
 pub fn modal_02_close_on_click() {
     modal_close("modal_02");
 }

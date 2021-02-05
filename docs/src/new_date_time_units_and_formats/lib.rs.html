@@ -404,6 +404,17 @@
 <span id="401">401</span>
 <span id="402">402</span>
 <span id="403">403</span>
+<span id="404">404</span>
+<span id="405">405</span>
+<span id="406">406</span>
+<span id="407">407</span>
+<span id="408">408</span>
+<span id="409">409</span>
+<span id="410">410</span>
+<span id="411">411</span>
+<span id="412">412</span>
+<span id="413">413</span>
+<span id="414">414</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="doccomment">//! find the long README.md here:  </span>
 <span class="doccomment">//! [github.com/LucianoBestia/new_date_time_units_and_formats](https://github.com/LucianoBestia/new_date_time_units_and_formats)  </span>
@@ -428,6 +439,8 @@
         <span class="string">&quot;new_date_time_units_and_formats v{}&quot;</span>,
         <span class="macro">env</span><span class="macro">!</span>(<span class="string">&quot;CARGO_PKG_VERSION&quot;</span>)
     ));
+    <span class="ident">set_text</span>(<span class="string">&quot;span_version&quot;</span>, <span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;v{}&quot;</span>, <span class="macro">env</span><span class="macro">!</span>(<span class="string">&quot;CARGO_PKG_VERSION&quot;</span>)));
+
     <span class="ident">set_event_handlers</span>();
     <span class="comment">// init values</span>
     <span class="ident">cnv_on_click</span>(<span class="string">&quot;cnv_yf&quot;</span>);
@@ -437,6 +450,7 @@
     <span class="prelude-val">Ok</span>(())
 }
 
+<span class="doccomment">/// set event handlers with macros</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_event_handlers</span>() {
     <span class="macro">on_click</span><span class="macro">!</span>(<span class="string">&quot;div_1&quot;</span>, <span class="ident">div_cell_multi_value_on_click</span>, <span class="string">&quot;div_1&quot;</span>);
     <span class="macro">on_click</span><span class="macro">!</span>(<span class="string">&quot;div_2&quot;</span>, <span class="ident">div_cell_multi_value_on_click</span>, <span class="string">&quot;div_2&quot;</span>);
@@ -485,6 +499,7 @@
     <span class="macro">on_click</span><span class="macro">!</span>(<span class="string">&quot;modal_02_close&quot;</span>, <span class="ident">modal_02_close_on_click</span>);
 }
 
+<span class="doccomment">/// converts from different units of measure</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">convert</span>() {
     <span class="kw">let</span> <span class="ident">value_orig</span> <span class="op">=</span> <span class="ident">get_text</span>(<span class="string">&quot;div_input&quot;</span>);
     <span class="kw">let</span> <span class="ident">conversion</span> <span class="op">=</span> <span class="ident">get_text</span>(<span class="string">&quot;div_toolbar&quot;</span>);
@@ -617,6 +632,7 @@
     }
 }
 
+<span class="doccomment">/// event handler</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">div_cell_on_click</span>(<span class="ident">text</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {
     <span class="kw">let</span> <span class="ident">input_text</span> <span class="op">=</span> <span class="ident">get_text</span>(<span class="string">&quot;div_input&quot;</span>);
     <span class="comment">// the single space after c or v</span>
@@ -628,6 +644,7 @@
     <span class="ident">convert</span>();
 }
 
+<span class="doccomment">/// event handler</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">div_cell_multi_value_on_click</span>(<span class="ident">element_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {
     <span class="kw">let</span> <span class="ident">input_text</span> <span class="op">=</span> <span class="ident">get_text</span>(<span class="string">&quot;div_input&quot;</span>);
     <span class="kw">let</span> <span class="ident">text</span> <span class="op">=</span> <span class="ident">get_text</span>(<span class="ident">element_id</span>);
@@ -644,6 +661,7 @@
     <span class="ident">convert</span>();
 }
 
+<span class="doccomment">/// event handler</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">div_backspace_on_click</span>() {
     <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">text</span> <span class="op">=</span> <span class="ident">get_text</span>(<span class="string">&quot;div_input&quot;</span>);
     <span class="kw">if</span> <span class="op">!</span><span class="ident">text</span>.<span class="ident">is_empty</span>() {
@@ -653,11 +671,13 @@
     }
 }
 
+<span class="doccomment">/// event handler</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">div_c_on_click</span>() {
     <span class="ident">set_text</span>(<span class="string">&quot;div_input&quot;</span>, <span class="string">&quot;&quot;</span>);
     <span class="ident">convert</span>();
 }
 
+<span class="doccomment">/// event handler</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">div_now_on_click</span>() {
     <span class="kw">let</span> <span class="ident">now_js</span> <span class="op">=</span> <span class="ident">js_sys</span>::<span class="ident">Date</span>::<span class="ident">new_0</span>();
     <span class="kw">let</span> <span class="ident">now_time</span> <span class="op">=</span> <span class="ident">NaiveTime</span>::<span class="ident">from_hms</span>(<span class="ident">now_js</span>.<span class="ident">get_hours</span>(), <span class="ident">now_js</span>.<span class="ident">get_minutes</span>(), <span class="number">0</span>);
@@ -708,11 +728,12 @@
     <span class="ident">convert</span>();
 }
 
-<span class="doccomment">/// open modal div</span>
+<span class="doccomment">/// event handler open modal div</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">toolbar_on_click</span>() {
     <span class="ident">modal_open</span>(<span class="string">&quot;modal_01&quot;</span>);
 }
 
+<span class="doccomment">/// event handler</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">cnv_on_click</span>(<span class="ident">element_id</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) {
     <span class="kw">let</span> <span class="ident">conversion</span> <span class="op">=</span> <span class="ident">get_text</span>(<span class="ident">element_id</span>);
     <span class="ident">set_text</span>(<span class="string">&quot;div_toolbar&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">conversion</span>);
@@ -800,11 +821,12 @@
     <span class="ident">convert</span>();
 }
 
-<span class="doccomment">/// open modal div</span>
+<span class="doccomment">/// event handler - open modal div</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">menu_on_click</span>() {
     <span class="ident">modal_open</span>(<span class="string">&quot;modal_02&quot;</span>);
 }
 
+<span class="doccomment">/// event handler</span>
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">modal_02_close_on_click</span>() {
     <span class="ident">modal_close</span>(<span class="string">&quot;modal_02&quot;</span>);
 }

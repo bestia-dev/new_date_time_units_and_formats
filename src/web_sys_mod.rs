@@ -8,27 +8,26 @@ use wasm_bindgen::{JsCast, JsValue};
 use web_sys::console;
 // endregion: use
 
-/// Simple macro to set listener of on_click events to an element_id.
-/// no args: on_click!(element_1_id, function_ident)
-/// no args: on_click!("example_email",example_email)
-
+/// Simple macro to set listener of on_click events to an element_id.  
+/// no args: on_click!(element_id, function_ident)
+/// 1 args: on_click!(element_id, function_ident, arg_1)
 #[macro_export]
 macro_rules! on_click {
-    ($element_1_id: expr, $function_ident: ident) => {{
+    ($element_id: expr, $function_ident: ident) => {{
         let closure = Closure::wrap(Box::new(move || {
             $function_ident();
         }) as Box<dyn FnMut()>);
 
-        let html_element = get_html_element_by_id($element_1_id);
+        let html_element = get_html_element_by_id($element_id);
         html_element.set_onclick(Some(closure.as_ref().unchecked_ref()));
         closure.forget();
     }};
-    ($element_1_id: expr, $function_ident: ident, $arg_1: expr) => {{
+    ($element_id: expr, $function_ident: ident, $arg_1: expr) => {{
         let closure = Closure::wrap(Box::new(move || {
             $function_ident($arg_1);
         }) as Box<dyn FnMut()>);
 
-        let html_element = get_html_element_by_id($element_1_id);
+        let html_element = get_html_element_by_id($element_id);
         html_element.set_onclick(Some(closure.as_ref().unchecked_ref()));
         closure.forget();
     }};
@@ -59,11 +58,13 @@ pub fn debug_write(text: &str) {
     console::log_1(&JsValue::from_str(text));
 }
 
+/// get text from element_id
 pub fn get_text(element_id: &str) -> String {
     let div = get_html_element_by_id(element_id);
     div.inner_text()
 }
 
+/// set text to element_id
 pub fn set_text(element_id: &str, text: &str) {
     let div = get_html_element_by_id(element_id);
     div.set_inner_text(text);
