@@ -192,9 +192,12 @@ Actually it is so simple, you don't need a calendar, you already know it using s
 [![calendar 1](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 [![calendar 2](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 
-## Dependency
+## other veeks millis projects
 
+crate:  
 <https://github.com/LucianoBestia/veeks_millis>  
+PWA wasm clock:  
+<https://github.com/LucianoBestia/veeks_millis_clock>
 
 ## Please comment
 
