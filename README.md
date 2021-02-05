@@ -198,6 +198,7 @@ crate:
 <https://github.com/LucianoBestia/veeks_millis>  
 PWA wasm clock:  
 <https://github.com/LucianoBestia/veeks_millis_clock>
+![screenshot](https://github.com/LucianoBestia/veeks_millis_clock/raw/main/images/compare_clocks.png)
 
 ## Please comment
 
