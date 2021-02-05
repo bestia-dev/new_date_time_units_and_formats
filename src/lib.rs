@@ -21,6 +21,8 @@ pub fn wasm_bindgen_start() -> Result<(), JsValue> {
         "new_date_time_units_and_formats v{}",
         env!("CARGO_PKG_VERSION")
     ));
+    set_text("span_version", &format!("v{}", env!("CARGO_PKG_VERSION")));
+
     set_event_handlers();
     // init values
     cnv_on_click("cnv_yf");
@@ -43,7 +45,7 @@ pub fn set_event_handlers() {
     on_click!("div_0", div_cell_multi_value_on_click, "div_0");
 
     on_click!("div_dot", div_cell_on_click, ".");
-    on_click!("div_common_era", div_cell_on_click, ":");
+    on_click!("div_colon", div_cell_on_click, ":");
     on_click!("div_hyphen", div_cell_on_click, "-");
     on_click!("div_slash", div_cell_on_click, "/");
 

@@ -5,12 +5,12 @@
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **my proposal for a new date time units and formats**  
-***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.205.1138  date: 2021-02-05 authors: Luciano Bestia***  
+***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.205.1215  date: 2021-02-05 authors: Luciano Bestia***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
 [comment]: # (lmake_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-454-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-455-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-16-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-18-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
