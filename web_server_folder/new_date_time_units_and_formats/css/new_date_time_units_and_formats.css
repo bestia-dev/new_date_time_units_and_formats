@@ -18,6 +18,11 @@
     --brd_color_grid: #82AE4D;
 }
 
+/* disable double-tap for zooming*/
+* {
+    touch-action: manipulation;
+}
+
 html { 
     font-family: sans-serif;
     font-size: 15px;

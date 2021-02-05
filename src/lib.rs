@@ -1,6 +1,5 @@
-// region: lmake_md_to_doc_comments include README.md A //!
-
-// endregion: lmake_md_to_doc_comments include README.md A //!
+//! find the long README.md here:  
+//! [github.com/LucianoBestia/new_date_time_units_and_formats](https://github.com/LucianoBestia/new_date_time_units_and_formats)  
 
 // use unwrap::unwrap;
 use chrono::{NaiveDate, NaiveTime};

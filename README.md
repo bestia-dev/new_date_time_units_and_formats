@@ -5,14 +5,14 @@
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **my proposal for a new date time units and formats**  
-***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.202.1820  date: 2021-02-02 authors: Luciano Bestia***  
+***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.205.1138  date: 2021-02-05 authors: Luciano Bestia***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
 [comment]: # (lmake_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-451-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-14-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-20-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-454-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-16-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-18-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
 
@@ -134,7 +134,7 @@ The veekday is already inside the new date format as a number: 1d is monday and 
 
 > Estimates of the number of human languages in the world vary between 5000 and 7000.
 >
-> https://en.wikipedia.org/wiki/Language  
+> <https://en.wikipedia.org/wiki/Language>  
 
 I propose that monday, tuesday,... be renamed to 1d, 2d, 3d, 4d, 5d, 6d, 7d with pronunciation one-dee, two-dee, three-dee, four-dee, five-dee, six-dee, seven-dee.  
 

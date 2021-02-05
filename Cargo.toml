@@ -1,6 +1,6 @@
 [package]
 name = "new_date_time_units_and_formats"
-version = "2021.202.1820"
+version = "2021.205.1138"
 authors = ["Luciano Bestia <Luciano.Bestia@gmail.com>"]
 edition = "2018"
 description = "my proposal for a new date time units and formats"
