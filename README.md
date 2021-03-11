@@ -208,6 +208,27 @@ It is a difficult topic. A lot of people have strong ideas about date and time. 
 Let discuss it in the [Discussion](https://github.com/LucianoBestia/new_date_time_units_and_formats/discussions) section of this repository.  Stuff like `time zones`, kiloseconds, swatch internet time,...  
 But most of all let strive for change for the better. All of humanity together.  
 
+## The shortest description
+
+There must be a lot of compromises to adapt our time units to our planet's orbit.  
+A new standard should explicitly state chosen compromises for example (my proposal):  
+ 
+- Make hours, minutes, and seconds obsolete. The only unit for time should be the already existing "day". Smaller is a milliday or microday. Logical. Metric. The "day" is defined as being equal to the time duration of 794 243 384 928 000 periods of the radiation corresponding to the transition between the two hyperfine levels of the fundamental unperturbed ground-state of the caesium-133 atom.
+- An Earth's natural day is close to 1d=1000md, but not equal. Sometimes there is a leap second or microday to synchronize them. 
+- Time zones are very natural to people. I think they must stay. Today they are mostly rounded to one hour, but that can change arbitrarily. We have UTC to express a global planet time.
+
+example: 12:00 AM = 500md, 6:00pm = 750md  
+  
+- Make months obsolete, they are not needed if we have weeks.
+- A week has 7 days only because people have this tradition and built a lot of routines around that. This is impossible to change.
+- Let start every year with a "Monday".  So we know for every day in the year which weekday it is. Forever.
+- A year is not exactly 52 weeks. The remaining 1 or 2 "celebration days" are added to sync our measurement to the planet's orbit.
+- So we need to create a new term for this new type of week that has the exception of "celebration days". Let call it "veek" for fun.
+- The weekday's names are different in every language. Let make things global and digital. monday is 1d, tuesday is 2d,.., sunday is 7d.
+
+example: 1.1.2021 = 2021c 01v 1d,  11.3.2021 = 2021c 10v 7d  
+"c" stands for CE-common era. "v" stands for veek, "d" stands for day.  
+
 ## Development of a little rust converter program (pwa, wasm) for mobile
 
 Install some utilities:  
