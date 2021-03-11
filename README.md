@@ -205,7 +205,8 @@ PWA wasm clock:
 ## Please comment
 
 It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they were born in a system and learned all the fine details over time. The cultural change to the new system will require a change of a generation. Children that learn the new system early will see the old system as archaic, complicated and not easily understandable.  
-Let discuss it in the [Discussion](https://github.com/LucianoBestia/new_date_time_units_and_formats/discussions) section of this repository. But most of all let strive for change for the better. All of humanity together.  
+Let discuss it in the [Discussion](https://github.com/LucianoBestia/new_date_time_units_and_formats/discussions) section of this repository.  Stuff like `time zones`, kiloseconds, swatch internet time,...  
+But most of all let strive for change for the better. All of humanity together.  
 
 ## Development of a little rust converter program (pwa, wasm) for mobile
 
