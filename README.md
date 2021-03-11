@@ -208,7 +208,7 @@ It is a difficult topic. A lot of people have strong ideas about date and time. 
 Let discuss it in the [Discussion](https://github.com/LucianoBestia/new_date_time_units_and_formats/discussions) section of this repository.  Stuff like `time zones`, kiloseconds, swatch internet time,...  
 But most of all let strive for change for the better. All of humanity together.  
 
-## The shortest description
+## TL;DR - The shortest description
 
 There must be a lot of compromises to adapt our time units to our planet's orbit.  
 A new standard should explicitly state chosen compromises for example (my proposal):  
@@ -217,7 +217,7 @@ A new standard should explicitly state chosen compromises for example (my propos
 - An Earth's natural day is close to 1d=1000md, but not equal. Sometimes there is a leap second or microday to synchronize them. 
 - Time zones are very natural to people. I think they must stay. Today they are mostly rounded to one hour, but that can change arbitrarily. We have UTC to express a global planet time.
 
-example: 12:00 AM = 500md, 6:00pm = 750md  
+example: 6:00 AM = 250md, 12:00 AM = 500md, 6:00pm = 750md  
   
 - Make months obsolete, they are not needed if we have weeks.
 - A week has 7 days only because people have this tradition and built a lot of routines around that. This is impossible to change.
