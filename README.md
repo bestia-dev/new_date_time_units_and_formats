@@ -38,7 +38,9 @@ Later on it is more and more difficult to learn and change.
 And because we live in a multi-generational society this "old" traditions are really tough to change.  
 There is always somebody who is unable to learn the new stuff. This is our biology. We are only humans.  
 And then there is always some tribal feelings that one group wants to be different from another group. Prehistoric baggage.  
-But it has already happened many times in history that people changed their units of measurement and formats. So there is a glimpse of hope.
+But it has already happened many times in history that people changed their units of measurement and formats. So there is a glimpse of hope. I hope without a bloody French revolution and piles of deads, but who knows?  
+I know there are already a lot of different proposals out there and I am sure some of them are identical or very similar to mine. Basically with a some thinking, and in the moderne age of knowledge, everybody will get to similar conclusions and solutions.  
+<https://www.youtube.com/watch?v=kUIYI34CdkE>  
 
 ## hours and minutes into millidays
 
@@ -197,13 +199,13 @@ Actually it is so simple, you don't need a calendar, you already know it using s
 crate:  
 <https://github.com/LucianoBestia/veeks_millis>  
 PWA wasm clock:  
-<https://github.com/LucianoBestia/veeks_millis_clock>
-![screenshot](https://github.com/LucianoBestia/veeks_millis_clock/raw/main/images/compare_clocks.png)
+<https://github.com/LucianoBestia/veeks_millis_clock>  
+![screenshot](https://github.com/LucianoBestia/veeks_millis_clock/raw/main/images/compare_clocks.png)  
 
 ## Please comment
 
 It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they were born in a system and learned all the fine details over time. The cultural change to the new system will require a change of a generation. Children that learn the new system early will see the old system as archaic, complicated and not easily understandable.  
-Let discuss it. But most of all let strive for change for the better. All of humanity together.  
+Let discuss it in the [Discussion](https://github.com/LucianoBestia/new_date_time_units_and_formats/discussions) section of this repository. But most of all let strive for change for the better. All of humanity together.  
 
 ## Development of a little rust converter program (pwa, wasm) for mobile
 
