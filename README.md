@@ -5,7 +5,7 @@
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **my proposal for a new date time units and formats**  
-***[repo](https://github.com/LucianoBestia/new_date_time_units_and_formats); version: 2021.205.1219  date: 2021-02-05 authors: Luciano Bestia***  
+***version: 2021.205.1219  date: 2021-02-05 author: [dev_Bestia](https://bestia.dev) repository: [GitHub](https://github.com/LucianoBestia/new_date_time_units_and_formats)***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
