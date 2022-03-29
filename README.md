@@ -5,29 +5,29 @@
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **my proposal for a new date time units and formats**  
-***version: 2021.205.1219  date: 2021-02-05 author: [dev_Bestia](https://bestia.dev) repository: [GitHub](https://github.com/LucianoBestia/new_date_time_units_and_formats)***  
+***version: 2021.205.1219  date: 2021-02-05 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/new_date_time_units_and_formats)***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
 [comment]: # (lmake_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-454-green.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-27-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-18-purple.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
-[![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-454-green.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
+[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-27-blue.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-18-purple.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
+[![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
+[![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 
 [comment]: # (lmake_lines_of_code end)
 
-[![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/blob/master/LICENSE) [![Rust](https://github.com/LucianoBestia/new_date_time_units_and_formats/workflows/RustAction/badge.svg)](https://github.com/LucianoBestia/new_date_time_units_and_formats/)
+[![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/blob/master/LICENSE) [![Rust](https://github.com/bestia-dev/new_date_time_units_and_formats/workflows/RustAction/badge.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 
 ## Try it
 
 <https://bestia.dev/new_date_time_units_and_formats/>  
-![icon](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/icons/android-icon-96x96.png)  
-![screenshot_01](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_01s1.png)
-![screenshot_02](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_02s1.png)
-![screenshot_03](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_03s1.png)
-![screenshot_04](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/Screenshot_04s1.png)
+![icon](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/icons/android-icon-96x96.png)  
+![screenshot_01](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_01s1.png)
+![screenshot_02](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_02s1.png)
+![screenshot_03](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_03s1.png)
+![screenshot_04](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/Screenshot_04s1.png)
 
 ## Proposal for a new date and time units and formats
 
@@ -189,23 +189,23 @@ And some more details for the single global format to be very explicit, correct 
 
 I prepared a simple spreadsheet with the new `veek calendar`.  
 It is good forever:  
-[new_calendar_forever.ods](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
+[new_calendar_forever.ods](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 Actually it is so simple, you don't need a calendar, you already know it using simple logic.  
-[![calendar 1](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
-[![calendar 2](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png)](https://github.com/LucianoBestia/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
+[![calendar 1](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
+[![calendar 2](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png)](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 
 ## other veeks millis projects
 
 crate:  
-<https://github.com/LucianoBestia/veeks_millis>  
+<https://github.com/bestia-dev/veeks_millis>  
 PWA wasm clock:  
-<https://github.com/LucianoBestia/veeks_millis_clock>  
-![screenshot](https://github.com/LucianoBestia/veeks_millis_clock/raw/main/images/compare_clocks.png)  
+<https://github.com/bestia-dev/veeks_millis_clock>  
+![screenshot](https://github.com/bestia-dev/veeks_millis_clock/raw/main/images/compare_clocks.png)  
 
 ## Please comment
 
 It is a difficult topic. A lot of people have strong ideas about date and time. Mostly because they were born in a system and learned all the fine details over time. The cultural change to the new system will require a change of a generation. Children that learn the new system early will see the old system as archaic, complicated and not easily understandable.  
-Let discuss it in the [Discussion](https://github.com/LucianoBestia/new_date_time_units_and_formats/discussions) section of this repository.  Stuff like `time zones`, kiloseconds, swatch internet time,...  
+Let discuss it in the [Discussion](https://github.com/bestia-dev/new_date_time_units_and_formats/discussions) section of this repository.  Stuff like `time zones`, kiloseconds, swatch internet time,...  
 But most of all let strive for change for the better. All of humanity together.  
 
 ## TL;DR - The shortest description
