@@ -2,6 +2,7 @@
 name = "new_date_time_units_and_formats"
 version = "2021.205.1219"
 authors = ["bestia.dev"]
+homepage = "https://bestia.dev"
 edition = "2018"
 description = "my proposal for a new date time units and formats"
 repository = "https://github.com/bestia-dev/new_date_time_units_and_formats"
