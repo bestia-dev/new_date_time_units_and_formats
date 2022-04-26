@@ -22,6 +22,8 @@
 [![Rust](https://github.com/bestia-dev/new_date_time_units_and_formats/workflows/RustAction/badge.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fbestia-dev%2Fnew_date_time_units_and_formats&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
+Hashtags: #rustlang #pwa #wasm #webassembly
+
 ## Try it
 
 <https://bestia.dev/new_date_time_units_and_formats/>  
