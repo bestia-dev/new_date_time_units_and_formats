@@ -112,7 +112,7 @@ The "second" is defined by taking the fixed numerical value of the caesium frequ
 From this definition we can see that it is arbitrary and we can define a milliday the same way:  
 1 milliday = 9192631770 * 86.4 = 794243384928 ∆νCs
 
-## months and days into veeks and veekdays
+## months and days into varweeks and varweekdays
 
 One year has approximately 365 days that are divided into 12 months. A group of 7 days is called a week.  
 Because Earths revolution around the Sun is not exact, we have to add one day every 4 years, except every 100 years, except again every 400 years.  
@@ -136,8 +136,8 @@ This means that every year will start with a monday. Forever. No need for a new 
 Simple.  
 We need to make new ideas to be global, international and computer friendly. Forget about the old cultural differences that caused a lot of problems. Most of the people don't know there are a lot of different calendars used around the world today and even more  in the past. They just need one calendar and they will be just happy until someone tries to change it.  
 
-First we need a new name for disambiguation because the classic week has constantly 7 days. The new word should be "veek" abbreviated to "v". Same-same, but different. It starts with the working monday and ends sunday to rest after a week of work.  
-The veekday is already inside the new date format as a number: 1d is monday and 7d is sunday. So no more unknown veekdays in the date format. And having a numeric value for veekday is way better than words that are different in every languages or cultures today.  
+First we need a new name for disambiguation because the classic week has constantly 7 days. The new word should be "varweek" abbreviated to "v". Same-same, but different. It starts with the working monday and ends sunday to rest after a week of work.  
+The varweekday is already inside the new date format as a number: 1d is monday and 7d is sunday. So no more unknown varweekdays in the date format. And having a numeric value for varweekday is way better than words that are different in every languages or cultures today.  
 
 > Estimates of the number of human languages in the world vary between 5000 and 7000.
 >
@@ -145,67 +145,67 @@ The veekday is already inside the new date format as a number: 1d is monday and 
 
 I propose that monday, tuesday,... be renamed to 1d, 2d, 3d, 4d, 5d, 6d, 7d with pronunciation one-dee, two-dee, three-dee, four-dee, five-dee, six-dee, seven-dee.  
 
-Quarters for business reports are very easily calculated: 52 veeks / 4 = 13 veeks per quarter.  
+Quarters for business reports are very easily calculated: 52 varweeks / 4 = 13 varweeks per quarter.  
 Let abolish months altogether. The use of months should disappear in official life.  
 Sure people will use it in some cultural context in their private life just like we use zodiac signs in astrology today.
-Instead of a month, some things would be calculated in intervals of 4 veeks. That makes exactly 13 four-veeks intervals in a year. That is very close to the old notion of "month", but it is 13 and not 12. A big difference. So, simply don't use it.  
+Instead of a month, some things would be calculated in intervals of 4 varweeks. That makes exactly 13 four-varweeks intervals in a year. That is very close to the old notion of "month", but it is 13 and not 12. A big difference. So, simply don't use it.  
 
-| old month day       | new veek     | pronunciation            |
+| old month day       | new varweek     | pronunciation            |
 | :------------------ | :----------- | :----------------        |
-| january 1st         | 01v 1d       | veek one one-dee          |
-| january 2nd         | 01v 2d       | veek one two-dee          |
-| january 7th         | 01v 7d       | veek one seven-dee        |
-| january 8th         | 02v 1d       | veek two one-dee          |
-| january 15th        | 03v 1d       | veek three one-dee        |
-| january 22th        | 04v 1d       | veek four one-dee         |
-| january 29th        | 05v 1d       | veek five one-dee         |
-| february 5th        | 06v 1d       | veek six one-dee          |
-| march 5th           | 10v 1d       | veek ten one-dee          |
-| april 2nd           | 14v 1d       | veek fourteen one-dee     |
-| may 7th             | 19v 1d       | veek nineteen one-dee     |
-| june 4th            | 23v 1d       | veek twenty three one-dee |
-| july 2nd            | 27v 1d       | veek twenty seven one-dee |
-| august 6th          | 32v 1d       | veek thirty two one-dee   |
-| september 3rd       | 36v 1d       | veek thirty six one-dee   |
-| october 1st         | 40v 1d       | veek forty one-dee        |
-| november 5th        | 45v 1d       | veek forty five one-dee   |
-| december 3th        | 49v 1d       | veek forty nine one-dee   |
-| december 25th       | 52v 2d       | veek fifty two two-dee    |
+| january 1st         | 01v 1d       | varweek one one-dee          |
+| january 2nd         | 01v 2d       | varweek one two-dee          |
+| january 7th         | 01v 7d       | varweek one seven-dee        |
+| january 8th         | 02v 1d       | varweek two one-dee          |
+| january 15th        | 03v 1d       | varweek three one-dee        |
+| january 22th        | 04v 1d       | varweek four one-dee         |
+| january 29th        | 05v 1d       | varweek five one-dee         |
+| february 5th        | 06v 1d       | varweek six one-dee          |
+| march 5th           | 10v 1d       | varweek ten one-dee          |
+| april 2nd           | 14v 1d       | varweek fourteen one-dee     |
+| may 7th             | 19v 1d       | varweek nineteen one-dee     |
+| june 4th            | 23v 1d       | varweek twenty three one-dee |
+| july 2nd            | 27v 1d       | varweek twenty seven one-dee |
+| august 6th          | 32v 1d       | varweek thirty two one-dee   |
+| september 3rd       | 36v 1d       | varweek thirty six one-dee   |
+| october 1st         | 40v 1d       | varweek forty one-dee        |
+| november 5th        | 45v 1d       | varweek forty five one-dee   |
+| december 3th        | 49v 1d       | varweek forty nine one-dee   |
+| december 25th       | 52v 2d       | varweek fifty two two-dee    |
 | december 31th       | 53v 1d       | celebration one-dee       |
 
-People will probably shorten the pronunciation to `one one-dee`, `forty nine two-dee` without repeating `veek` every single time.  
+People will probably shorten the pronunciation to `one one-dee`, `forty nine two-dee` without repeating `varweek` every single time.  
 It is very clear if a number finishes with a unit of measure.  
 For years it should be `c` for `CE - common era`, example:  
 `2021c`  
 to disambiguate from the buddhist year (2564 B.E.), islamic year (1442 AH), Chinese year (4718) and [other years](https://allthatsinteresting.com/what-year-is-it).  
-Example of a global full date format with veeks:  
+Example of a global full date format with varweeks:  
 `2021c 23v 3d`  
 Now for fun, compare this to one of the many formats today:  
 `9.6.2021 tuesday`  
 And some more details for the single global format to be very explicit, correct and unambiguous:  
 
-- every number must end with a unit (c, v, d - year CE, veek, day)
+- every number must end with a unit (c, v, d - year CE, varweek, day)
 - after the unit there is a space  
-- veeks are always written with 2 digits example: 01, 02,... because it makes it easier to alphabetically sort dates and never confuse with days  
+- varweeks are always written with 2 digits example: 01, 02,... because it makes it easier to alphabetically sort dates and never confuse with days  
 - days are always one single digit, from 1 to 7
 - years are always in 4 digits. The new date format is not suitable for ancient dates before 1000c , but neither is the current calendar. Historians use other types of calendars for the far past.  
 
-## veek calendar forever
+## varweek calendar forever
 
-I prepared a simple spreadsheet with the new `veek calendar`.  
+I prepared a simple spreadsheet with the new `varweek calendar`.  
 It is good forever:  
 [new_calendar_forever.ods](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 Actually it is so simple, you don't need a calendar, you already know it using simple logic.  
 [![calendar 1](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/calendar_forever_1.png)](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 [![calendar 2](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/images/calendar_forever_2.png)](https://github.com/bestia-dev/new_date_time_units_and_formats/raw/main/web_server_folder/new_date_time_units_and_formats/new_calendar_forever.ods)  
 
-## other veeks millis projects
+## other varweeks millis projects
 
 crate:  
-<https://github.com/bestia-dev/veeks_millis>  
+<https://github.com/bestia-dev/varweeks_millis>  
 PWA wasm clock:  
-<https://github.com/bestia-dev/veeks_millis_clock>  
-![screenshot](https://github.com/bestia-dev/veeks_millis_clock/raw/main/images/compare_clocks.png)  
+<https://github.com/bestia-dev/varweeks_millis_clock>  
+![screenshot](https://github.com/bestia-dev/varweeks_millis_clock/raw/main/images/compare_clocks.png)  
 
 ## Please comment
 
@@ -228,11 +228,11 @@ example: 6:00 AM = 250md, 12:00 AM = 500md, 6:00pm = 750md
 - A week has 7 days only because people have this tradition and built a lot of routines around that. This is impossible to change.
 - Let start every year with a "Monday".  So we know for every day in the year which weekday it is. Forever.
 - A year is not exactly 52 weeks. The remaining 1 or 2 "celebration days" are added to sync our measurement to the planet's orbit.
-- So we need to create a new term for this new type of week that has the exception of "celebration days". Let call it "veek" for fun.
+- So we need to create a new term for this new type of week that has the exception of "celebration days". Let call it "varweek" for fun.
 - The weekday's names are different in every language. Let make things global and digital. monday is 1d, tuesday is 2d,.., sunday is 7d.
 
 example: 1.1.2021 = 2021c 01v 1d,  11.3.2021 = 2021c 10v 7d  
-"c" stands for CE-common era. "v" stands for veek, "d" stands for day.  
+"c" stands for CE-common era. "v" stands for varweek, "d" stands for day.  
 
 ## Development of a little rust converter program (pwa, wasm) for mobile
 

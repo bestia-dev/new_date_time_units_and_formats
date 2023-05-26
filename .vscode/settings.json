@@ -1,16 +1,31 @@
 {
     "cSpell.words": [
-        "bestia",
-        "five-dee",
-        "four-dee",
-        "Licence",
-        "one-dee",
-        "roundf",
-        "rustlang",
-        "seven-dee",
-        "six-dee",
-        "three-dee",
-        "two-dee",
-        "webassembly"
-    ]
+      "bestia",
+      "bindgen",
+      "cdylib",
+      "chrono",
+      "endregion",
+      "five-dee",
+      "four-dee",
+      "jetli",
+      "Licence",
+      "Milli",
+      "millidays",
+      "millis",
+      "one-dee",
+      "plantuml",
+      "roundf",
+      "rustlang",
+      "serde",
+      "seven-dee",
+      "six-dee",
+      "three-dee",
+      "two-dee",
+      "Varweek",
+      "varweeks",
+      "webassembly"
+    ],
+    "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#553955" // Change this color!
+  }
 }

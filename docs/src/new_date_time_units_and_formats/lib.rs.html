@@ -424,7 +424,7 @@
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 <span class="kw">use</span> <span class="ident">wasm_bindgen</span>::{<span class="ident">JsCast</span>, <span class="ident">JsValue</span>};
 
-<span class="kw">use</span> <span class="ident">veeks_millis</span>;
+<span class="kw">use</span> <span class="ident">varweeks_millis</span>;
 
 <span class="kw">mod</span> <span class="ident">web_sys_mod</span>;
 <span class="kw">use</span> <span class="ident">web_sys_mod</span>::<span class="kw-2">*</span>;
@@ -473,7 +473,7 @@
         <span class="ident">div_cell_multi_value_on_click</span>,
         <span class="string">&quot;div_common_era&quot;</span>
     );
-    <span class="macro">on_click</span><span class="macro">!</span>(<span class="string">&quot;div_veek&quot;</span>, <span class="ident">div_cell_multi_value_on_click</span>, <span class="string">&quot;div_veek&quot;</span>);
+    <span class="macro">on_click</span><span class="macro">!</span>(<span class="string">&quot;div_varweek&quot;</span>, <span class="ident">div_cell_multi_value_on_click</span>, <span class="string">&quot;div_varweek&quot;</span>);
     <span class="macro">on_click</span><span class="macro">!</span>(<span class="string">&quot;div_day&quot;</span>, <span class="ident">div_cell_multi_value_on_click</span>, <span class="string">&quot;div_day&quot;</span>);
 
     <span class="macro">on_click</span><span class="macro">!</span>(<span class="string">&quot;div_backspace&quot;</span>, <span class="ident">div_backspace_on_click</span>);
@@ -509,12 +509,12 @@
         <span class="string">&quot;yyyy-mm-dd ---&gt; v&quot;</span> <span class="op">=</span><span class="op">&gt;</span> <span class="kw">match</span> <span class="ident">NaiveDate</span>::<span class="ident">parse_from_str</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>, <span class="string">&quot;%Y-%m-%d&quot;</span>) {
             <span class="prelude-val">Ok</span>(<span class="ident">naive_date</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                 <span class="string">&quot;div_output&quot;</span>,
-                <span class="kw-2">&amp;</span><span class="ident">veeks_millis</span>::<span class="ident">naive_date_to_veek_date</span>(<span class="ident">naive_date</span>),
+                <span class="kw-2">&amp;</span><span class="ident">varweeks_millis</span>::<span class="ident">naive_date_to_varweek_date</span>(<span class="ident">naive_date</span>),
             ),
             <span class="prelude-val">Err</span>(<span class="ident">_err</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(<span class="string">&quot;div_output&quot;</span>, <span class="string">&quot;unrecognized format&quot;</span>),
         },
         <span class="string">&quot;v ---&gt; yyyy-mm-dd&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
-            <span class="kw">let</span> <span class="ident">nd</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">veek_to_naive_date_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
+            <span class="kw">let</span> <span class="ident">nd</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">varweek_to_naive_date_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
             <span class="kw">match</span> <span class="ident">nd</span> {
                 <span class="prelude-val">Some</span>(<span class="ident">naive_date</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                     <span class="string">&quot;div_output&quot;</span>,
@@ -526,12 +526,12 @@
         <span class="string">&quot;dd.mm.yyyy ---&gt; v&quot;</span> <span class="op">=</span><span class="op">&gt;</span> <span class="kw">match</span> <span class="ident">NaiveDate</span>::<span class="ident">parse_from_str</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>, <span class="string">&quot;%d.%m.%Y&quot;</span>) {
             <span class="prelude-val">Ok</span>(<span class="ident">naive_date</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                 <span class="string">&quot;div_output&quot;</span>,
-                <span class="kw-2">&amp;</span><span class="ident">veeks_millis</span>::<span class="ident">naive_date_to_veek_date</span>(<span class="ident">naive_date</span>),
+                <span class="kw-2">&amp;</span><span class="ident">varweeks_millis</span>::<span class="ident">naive_date_to_varweek_date</span>(<span class="ident">naive_date</span>),
             ),
             <span class="prelude-val">Err</span>(<span class="ident">_err</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(<span class="string">&quot;div_output&quot;</span>, <span class="string">&quot;unrecognized format&quot;</span>),
         },
         <span class="string">&quot;v ---&gt; dd.mm.yyyy&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
-            <span class="kw">let</span> <span class="ident">nd</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">veek_to_naive_date_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
+            <span class="kw">let</span> <span class="ident">nd</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">varweek_to_naive_date_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
             <span class="kw">match</span> <span class="ident">nd</span> {
                 <span class="prelude-val">Some</span>(<span class="ident">naive_date</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                     <span class="string">&quot;div_output&quot;</span>,
@@ -543,12 +543,12 @@
         <span class="string">&quot;mm/dd/yyyy ---&gt; v&quot;</span> <span class="op">=</span><span class="op">&gt;</span> <span class="kw">match</span> <span class="ident">NaiveDate</span>::<span class="ident">parse_from_str</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>, <span class="string">&quot;%m/%d/%Y&quot;</span>) {
             <span class="prelude-val">Ok</span>(<span class="ident">naive_date</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                 <span class="string">&quot;div_output&quot;</span>,
-                <span class="kw-2">&amp;</span><span class="ident">veeks_millis</span>::<span class="ident">naive_date_to_veek_date</span>(<span class="ident">naive_date</span>),
+                <span class="kw-2">&amp;</span><span class="ident">varweeks_millis</span>::<span class="ident">naive_date_to_varweek_date</span>(<span class="ident">naive_date</span>),
             ),
             <span class="prelude-val">Err</span>(<span class="ident">_err</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(<span class="string">&quot;div_output&quot;</span>, <span class="string">&quot;unrecognized format&quot;</span>),
         },
         <span class="string">&quot;v ---&gt; mm/dd/yyyy&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
-            <span class="kw">let</span> <span class="ident">nd</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">veek_to_naive_date_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
+            <span class="kw">let</span> <span class="ident">nd</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">varweek_to_naive_date_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
             <span class="kw">match</span> <span class="ident">nd</span> {
                 <span class="prelude-val">Some</span>(<span class="ident">naive_date</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                     <span class="string">&quot;div_output&quot;</span>,
@@ -560,15 +560,15 @@
         <span class="string">&quot;HH:MM 24 ---&gt; md&quot;</span> <span class="op">=</span><span class="op">&gt;</span> <span class="kw">match</span> <span class="ident">NaiveTime</span>::<span class="ident">parse_from_str</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>, <span class="string">&quot;%H:%M&quot;</span>) {
             <span class="prelude-val">Ok</span>(<span class="ident">naive_time</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                 <span class="string">&quot;div_output&quot;</span>,
-                <span class="kw-2">&amp;</span><span class="ident">veeks_millis</span>::<span class="ident">naive_time_to_millis_str</span>(<span class="ident">naive_time</span>),
+                <span class="kw-2">&amp;</span><span class="ident">varweeks_millis</span>::<span class="ident">naive_time_to_millis_str</span>(<span class="ident">naive_time</span>),
             ),
             <span class="prelude-val">Err</span>(<span class="ident">_err</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(<span class="string">&quot;div_output&quot;</span>, <span class="string">&quot;unrecognized format&quot;</span>),
         },
         <span class="string">&quot;md ---&gt; HH:MM 24&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
-            <span class="kw">let</span> <span class="ident">millis</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">millis_from_str_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
+            <span class="kw">let</span> <span class="ident">millis</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">millis_from_str_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
             <span class="kw">match</span> <span class="ident">millis</span> {
                 <span class="prelude-val">Some</span>(<span class="ident">millis</span>) <span class="op">=</span><span class="op">&gt;</span> {
-                    <span class="kw">let</span> <span class="ident">nt</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">millis_to_naive_time_opt</span>(<span class="ident">millis</span>);
+                    <span class="kw">let</span> <span class="ident">nt</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">millis_to_naive_time_opt</span>(<span class="ident">millis</span>);
                     <span class="kw">match</span> <span class="ident">nt</span> {
                         <span class="prelude-val">Some</span>(<span class="ident">naive_time</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                             <span class="string">&quot;div_output&quot;</span>,
@@ -583,15 +583,15 @@
         <span class="string">&quot;HH:MM 12 ---&gt; md&quot;</span> <span class="op">=</span><span class="op">&gt;</span> <span class="kw">match</span> <span class="ident">NaiveTime</span>::<span class="ident">parse_from_str</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>, <span class="string">&quot;%I:%M %p&quot;</span>) {
             <span class="prelude-val">Ok</span>(<span class="ident">naive_time</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                 <span class="string">&quot;div_output&quot;</span>,
-                <span class="kw-2">&amp;</span><span class="ident">veeks_millis</span>::<span class="ident">naive_time_to_millis_str</span>(<span class="ident">naive_time</span>),
+                <span class="kw-2">&amp;</span><span class="ident">varweeks_millis</span>::<span class="ident">naive_time_to_millis_str</span>(<span class="ident">naive_time</span>),
             ),
             <span class="prelude-val">Err</span>(<span class="ident">_err</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(<span class="string">&quot;div_output&quot;</span>, <span class="string">&quot;unrecognized format&quot;</span>),
         },
         <span class="string">&quot;md ---&gt; HH:MM 12&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
-            <span class="kw">let</span> <span class="ident">millis</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">millis_from_str_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
+            <span class="kw">let</span> <span class="ident">millis</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">millis_from_str_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
             <span class="kw">match</span> <span class="ident">millis</span> {
                 <span class="prelude-val">Some</span>(<span class="ident">millis</span>) <span class="op">=</span><span class="op">&gt;</span> {
-                    <span class="kw">let</span> <span class="ident">nt</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">millis_to_naive_time_opt</span>(<span class="ident">millis</span>);
+                    <span class="kw">let</span> <span class="ident">nt</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">millis_to_naive_time_opt</span>(<span class="ident">millis</span>);
                     <span class="kw">match</span> <span class="ident">nt</span> {
                         <span class="prelude-val">Some</span>(<span class="ident">naive_time</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(
                             <span class="string">&quot;div_output&quot;</span>,
@@ -608,7 +608,7 @@
             <span class="kw">let</span> <span class="ident">seconds</span> <span class="op">=</span> <span class="ident">f64</span>::<span class="ident">from_str</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
             <span class="kw">match</span> <span class="ident">seconds</span> {
                 <span class="prelude-val">Ok</span>(<span class="ident">seconds</span>) <span class="op">=</span><span class="op">&gt;</span> {
-                    <span class="kw">let</span> <span class="ident">micros</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">seconds_to_micros</span>(<span class="ident">seconds</span>);
+                    <span class="kw">let</span> <span class="ident">micros</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">seconds_to_micros</span>(<span class="ident">seconds</span>);
                     <span class="comment">// format to 3 decimal places</span>
                     <span class="kw">let</span> <span class="ident">micros</span> <span class="op">=</span> <span class="macro">format</span><span class="macro">!</span>(<span class="string">r#&quot;{:.3}μd&quot;#</span>, <span class="ident">micros</span>);
                     <span class="ident">set_text</span>(<span class="string">&quot;div_output&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">micros</span>);
@@ -617,10 +617,10 @@
             }
         }
         <span class="string">&quot;μd ---&gt; seconds&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
-            <span class="kw">let</span> <span class="ident">micros</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">micros_from_str_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
+            <span class="kw">let</span> <span class="ident">micros</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">micros_from_str_opt</span>(<span class="kw-2">&amp;</span><span class="ident">value_orig</span>);
             <span class="kw">match</span> <span class="ident">micros</span> {
                 <span class="prelude-val">Some</span>(<span class="ident">micros</span>) <span class="op">=</span><span class="op">&gt;</span> {
-                    <span class="kw">let</span> <span class="ident">seconds</span> <span class="op">=</span> <span class="ident">veeks_millis</span>::<span class="ident">micros_to_seconds</span>(<span class="ident">micros</span>);
+                    <span class="kw">let</span> <span class="ident">seconds</span> <span class="op">=</span> <span class="ident">varweeks_millis</span>::<span class="ident">micros_to_seconds</span>(<span class="ident">micros</span>);
                     <span class="comment">// format to 3 decimal places</span>
                     <span class="kw">let</span> <span class="ident">seconds</span> <span class="op">=</span> <span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;{:.3}&quot;</span>, <span class="ident">seconds</span>);
                     <span class="ident">set_text</span>(<span class="string">&quot;div_output&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">seconds</span>);
@@ -691,7 +691,7 @@
     <span class="kw">if</span> <span class="ident">conversion</span>.<span class="ident">starts_with</span>(<span class="string">&quot;v&quot;</span>) {
         <span class="ident">set_text</span>(
             <span class="string">&quot;div_input&quot;</span>,
-            <span class="kw-2">&amp;</span><span class="ident">veeks_millis</span>::<span class="ident">naive_date_to_veek_date</span>(<span class="ident">now_date</span>),
+            <span class="kw-2">&amp;</span><span class="ident">varweeks_millis</span>::<span class="ident">naive_date_to_varweek_date</span>(<span class="ident">now_date</span>),
         );
     } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">conversion</span>.<span class="ident">starts_with</span>(<span class="string">&quot;yyyy-mm-dd&quot;</span>) {
         <span class="ident">set_text</span>(
@@ -718,7 +718,7 @@
     } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">conversion</span>.<span class="ident">starts_with</span>(<span class="string">&quot;md&quot;</span>) {
         <span class="ident">set_text</span>(
             <span class="string">&quot;div_input&quot;</span>,
-            <span class="kw-2">&amp;</span><span class="ident">veeks_millis</span>::<span class="ident">naive_time_to_millis_str</span>(<span class="ident">now_time</span>),
+            <span class="kw-2">&amp;</span><span class="ident">varweeks_millis</span>::<span class="ident">naive_time_to_millis_str</span>(<span class="ident">now_time</span>),
         );
     } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">conversion</span>.<span class="ident">starts_with</span>(<span class="string">&quot;μd&quot;</span>) {
         <span class="ident">set_text</span>(<span class="string">&quot;div_input&quot;</span>, <span class="string">&quot;110.880μd&quot;</span>);
@@ -745,10 +745,10 @@
     <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_slash&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell cell_disabled&quot;</span>);
     <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_dot&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell cell_disabled&quot;</span>);
     <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_common_era&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell cell_disabled&quot;</span>);
-    <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell cell_disabled&quot;</span>);
+    <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell cell_disabled&quot;</span>);
     <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell cell_disabled&quot;</span>);
     <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_common_era&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;c&quot;</span>);
-    <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;v&quot;</span>);
+    <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;v&quot;</span>);
     <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;d&quot;</span>);
 
     <span class="comment">// different formats allows different characters</span>
@@ -760,7 +760,7 @@
         }
         <span class="string">&quot;v ---&gt; yyyy-mm-dd&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_common_era&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
-            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
+            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
         }
         <span class="string">&quot;dd.mm.yyyy ---&gt; v&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
@@ -768,7 +768,7 @@
         }
         <span class="string">&quot;v ---&gt; dd.mm.yyyy&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_common_era&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
-            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
+            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
         }
         <span class="string">&quot;mm/dd/yyyy ---&gt; v&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
@@ -776,31 +776,31 @@
         }
         <span class="string">&quot;v ---&gt; mm/dd/yyyy&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_common_era&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
-            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
+            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
         }
         <span class="string">&quot;HH:MM 24 ---&gt; md&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_colon&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
         }
         <span class="string">&quot;md ---&gt; HH:MM 24&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
-            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
+            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
-            <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;m&quot;</span>);
+            <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;m&quot;</span>);
             <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;d&quot;</span>);
         }
         <span class="string">&quot;HH:MM 12 ---&gt; md&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_colon&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_common_era&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
-            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
+            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
             <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_common_era&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;A&quot;</span>);
-            <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;P&quot;</span>);
+            <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;P&quot;</span>);
             <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;M&quot;</span>);
         }
         <span class="string">&quot;md ---&gt; HH:MM 12&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
-            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
+            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
-            <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;m&quot;</span>);
+            <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;m&quot;</span>);
             <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;d&quot;</span>);
         }
         <span class="string">&quot;seconds ---&gt; μd&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
@@ -810,9 +810,9 @@
         <span class="string">&quot;μd ---&gt; seconds&quot;</span> <span class="op">=</span><span class="op">&gt;</span> {
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_now&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell cell_disabled&quot;</span>);
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_dot&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
-            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
+            <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
             <span class="ident">get_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_class_name</span>(<span class="string">&quot;div_cell&quot;</span>);
-            <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_veek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;μ&quot;</span>);
+            <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_varweek&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;μ&quot;</span>);
             <span class="ident">get_html_element_by_id</span>(<span class="string">&quot;div_day&quot;</span>).<span class="ident">set_inner_text</span>(<span class="string">&quot;d&quot;</span>);
         }
         <span class="kw">_</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">set_text</span>(<span class="string">&quot;div_output&quot;</span>, <span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;?? {}&quot;</span>, <span class="ident">conversion</span>)),

@@ -1,6 +1,6 @@
 [package]
 name = "new_date_time_units_and_formats"
-version = "2021.205.1219"
+version = "2023.526.1202"
 authors = ["bestia.dev"]
 homepage = "https://bestia.dev"
 edition = "2018"
@@ -18,18 +18,18 @@ crate-type = ["cdylib"]
 
 [dependencies]
 # my crates from crates.io
-veeks_millis = "0.5.5"
+varweeks_millis = "1.0.19"
 
 # third party crates
 unwrap = "1.2.1"
-wasm-bindgen = { version = "0.2.69", features = ["serde-serialize"] }
-console_error_panic_hook = "0.1.6"
-js-sys = "0.3.46"
-chrono = "0.4.19"
-regex = "1"
+wasm-bindgen = { version = "0.2.86", features = ["serde-serialize"] }
+console_error_panic_hook = "0.1.7"
+js-sys = "0.3.63"
+chrono = "0.4.24"
+regex = "1.8.3"
 
 [dependencies.web-sys]
-version = "0.3.46"
+version = "0.3.63"
 features = [
   "AbortController",
   "console",
@@ -52,7 +52,7 @@ features = [
 ]
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3.19"
+wasm-bindgen-test = "0.3.36"
 
 [profile.release]
 panic = "abort"

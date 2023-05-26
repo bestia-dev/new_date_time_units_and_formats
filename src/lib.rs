@@ -6,7 +6,7 @@ use chrono::{NaiveDate, NaiveTime};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::{JsCast, JsValue};
 
-use veeks_millis;
+use varweeks_millis;
 
 mod web_sys_mod;
 use web_sys_mod::*;
@@ -55,7 +55,7 @@ pub fn set_event_handlers() {
         div_cell_multi_value_on_click,
         "div_common_era"
     );
-    on_click!("div_veek", div_cell_multi_value_on_click, "div_veek");
+    on_click!("div_varweek", div_cell_multi_value_on_click, "div_varweek");
     on_click!("div_day", div_cell_multi_value_on_click, "div_day");
 
     on_click!("div_backspace", div_backspace_on_click);
@@ -91,66 +91,90 @@ pub fn convert() {
         "yyyy-mm-dd ---> v" => match NaiveDate::parse_from_str(&value_orig, "%Y-%m-%d") {
             Ok(naive_date) => set_text(
                 "div_output",
-                &veeks_millis::naive_date_to_veek_date(naive_date),
+                &varweeks_millis::VarweekDate::from_naive_date(naive_date)
+                    .unwrap()
+                    .to_string(),
             ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "v ---> yyyy-mm-dd" => {
-            let nd = veeks_millis::veek_to_naive_date_opt(&value_orig);
-            match nd {
-                Some(naive_date) => set_text(
-                    "div_output",
-                    naive_date.format("%Y-%m-%d").to_string().as_ref(),
-                ),
+            let v = varweeks_millis::VarweekDate::from_str(&value_orig);
+            match v {
+                Some(v) => {
+                    let nd = v.to_naive_date();
+                    match nd {
+                        Some(naive_date) => set_text(
+                            "div_output",
+                            naive_date.format("%Y-%m-%d").to_string().as_ref(),
+                        ),
+                        None => set_text("div_output", "unrecognized format"),
+                    }
+                }
                 None => set_text("div_output", "unrecognized format"),
             }
         }
         "dd.mm.yyyy ---> v" => match NaiveDate::parse_from_str(&value_orig, "%d.%m.%Y") {
             Ok(naive_date) => set_text(
                 "div_output",
-                &veeks_millis::naive_date_to_veek_date(naive_date),
+                &varweeks_millis::VarweekDate::from_naive_date(naive_date)
+                    .unwrap()
+                    .to_string(),
             ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "v ---> dd.mm.yyyy" => {
-            let nd = veeks_millis::veek_to_naive_date_opt(&value_orig);
-            match nd {
-                Some(naive_date) => set_text(
-                    "div_output",
-                    naive_date.format("%d.%m.%Y").to_string().as_ref(),
-                ),
+            let v = varweeks_millis::VarweekDate::from_str(&value_orig);
+            match v {
+                Some(v) => {
+                    let nd = v.to_naive_date();
+                    match nd {
+                        Some(naive_date) => set_text(
+                            "div_output",
+                            naive_date.format("%d.%m.%Y").to_string().as_ref(),
+                        ),
+                        None => set_text("div_output", "unrecognized format"),
+                    }
+                }
                 None => set_text("div_output", "unrecognized format"),
             }
         }
         "mm/dd/yyyy ---> v" => match NaiveDate::parse_from_str(&value_orig, "%m/%d/%Y") {
             Ok(naive_date) => set_text(
                 "div_output",
-                &veeks_millis::naive_date_to_veek_date(naive_date),
+                &varweeks_millis::VarweekDate::from_naive_date(naive_date)
+                    .unwrap()
+                    .to_string(),
             ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "v ---> mm/dd/yyyy" => {
-            let nd = veeks_millis::veek_to_naive_date_opt(&value_orig);
-            match nd {
-                Some(naive_date) => set_text(
-                    "div_output",
-                    naive_date.format("%m/%d/%Y").to_string().as_ref(),
-                ),
+            let v = varweeks_millis::VarweekDate::from_str(&value_orig);
+            match v {
+                Some(v) => {
+                    let nd = v.to_naive_date();
+                    match nd {
+                        Some(naive_date) => set_text(
+                            "div_output",
+                            naive_date.format("%m/%d/%Y").to_string().as_ref(),
+                        ),
+                        None => set_text("div_output", "unrecognized format"),
+                    }
+                }
                 None => set_text("div_output", "unrecognized format"),
             }
         }
         "HH:MM 24 ---> md" => match NaiveTime::parse_from_str(&value_orig, "%H:%M") {
             Ok(naive_time) => set_text(
                 "div_output",
-                &veeks_millis::naive_time_to_millis_str(naive_time),
+                &varweeks_millis::MilliTime::from_naive_time(naive_time).to_string(),
             ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "md ---> HH:MM 24" => {
-            let millis = veeks_millis::millis_from_str_opt(&value_orig);
+            let millis = varweeks_millis::MilliTime::from_str(&value_orig);
             match millis {
                 Some(millis) => {
-                    let nt = veeks_millis::millis_to_naive_time_opt(millis);
+                    let nt = millis.to_naive_time();
                     match nt {
                         Some(naive_time) => set_text(
                             "div_output",
@@ -165,15 +189,15 @@ pub fn convert() {
         "HH:MM 12 ---> md" => match NaiveTime::parse_from_str(&value_orig, "%I:%M %p") {
             Ok(naive_time) => set_text(
                 "div_output",
-                &veeks_millis::naive_time_to_millis_str(naive_time),
+                &varweeks_millis::MilliTime::from_naive_time(naive_time).to_string(),
             ),
             Err(_err) => set_text("div_output", "unrecognized format"),
         },
         "md ---> HH:MM 12" => {
-            let millis = veeks_millis::millis_from_str_opt(&value_orig);
+            let millis = varweeks_millis::MilliTime::from_str(&value_orig);
             match millis {
                 Some(millis) => {
-                    let nt = veeks_millis::millis_to_naive_time_opt(millis);
+                    let nt = millis.to_naive_time();
                     match nt {
                         Some(naive_time) => set_text(
                             "div_output",
@@ -190,19 +214,19 @@ pub fn convert() {
             let seconds = f64::from_str(&value_orig);
             match seconds {
                 Ok(seconds) => {
-                    let micros = veeks_millis::seconds_to_micros(seconds);
+                    let micros = varweeks_millis::MicroTime::from_seconds(seconds);
                     // format to 3 decimal places
-                    let micros = format!(r#"{:.3}μd"#, micros);
+                    let micros = format!(r#"{:.3}"#, micros);
                     set_text("div_output", &micros);
                 }
                 Err(_err) => set_text("div_output", "unrecognized format"),
             }
         }
         "μd ---> seconds" => {
-            let micros = veeks_millis::micros_from_str_opt(&value_orig);
+            let micros = varweeks_millis::MicroTime::from_str(&value_orig);
             match micros {
                 Some(micros) => {
-                    let seconds = veeks_millis::micros_to_seconds(micros);
+                    let seconds = micros.to_seconds();
                     // format to 3 decimal places
                     let seconds = format!("{:.3}", seconds);
                     set_text("div_output", &seconds);
@@ -262,18 +286,21 @@ pub fn div_c_on_click() {
 /// event handler
 pub fn div_now_on_click() {
     let now_js = js_sys::Date::new_0();
-    let now_time = NaiveTime::from_hms(now_js.get_hours(), now_js.get_minutes(), 0);
-    let now_date = NaiveDate::from_ymd(
+    let now_time = NaiveTime::from_hms_opt(now_js.get_hours(), now_js.get_minutes(), 0).unwrap();
+    let now_date = NaiveDate::from_ymd_opt(
         now_js.get_full_year() as i32,
         now_js.get_month() + 1,
         now_js.get_date(),
-    );
+    )
+    .unwrap();
     let conversion = get_text("div_toolbar");
 
     if conversion.starts_with("v") {
         set_text(
             "div_input",
-            &veeks_millis::naive_date_to_veek_date(now_date),
+            &varweeks_millis::VarweekDate::from_naive_date(now_date)
+                .unwrap()
+                .to_string(),
         );
     } else if conversion.starts_with("yyyy-mm-dd") {
         set_text(
@@ -300,7 +327,7 @@ pub fn div_now_on_click() {
     } else if conversion.starts_with("md") {
         set_text(
             "div_input",
-            &veeks_millis::naive_time_to_millis_str(now_time),
+            &varweeks_millis::MilliTime::from_naive_time(now_time).to_string(),
         );
     } else if conversion.starts_with("μd") {
         set_text("div_input", "110.880μd");
@@ -327,10 +354,10 @@ pub fn cnv_on_click(element_id: &str) {
     get_element_by_id("div_slash").set_class_name("div_cell cell_disabled");
     get_element_by_id("div_dot").set_class_name("div_cell cell_disabled");
     get_element_by_id("div_common_era").set_class_name("div_cell cell_disabled");
-    get_element_by_id("div_veek").set_class_name("div_cell cell_disabled");
+    get_element_by_id("div_varweek").set_class_name("div_cell cell_disabled");
     get_element_by_id("div_day").set_class_name("div_cell cell_disabled");
     get_html_element_by_id("div_common_era").set_inner_text("c");
-    get_html_element_by_id("div_veek").set_inner_text("v");
+    get_html_element_by_id("div_varweek").set_inner_text("v");
     get_html_element_by_id("div_day").set_inner_text("d");
 
     // different formats allows different characters
@@ -342,7 +369,7 @@ pub fn cnv_on_click(element_id: &str) {
         }
         "v ---> yyyy-mm-dd" => {
             get_element_by_id("div_common_era").set_class_name("div_cell");
-            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_element_by_id("div_varweek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
         }
         "dd.mm.yyyy ---> v" => {
@@ -350,7 +377,7 @@ pub fn cnv_on_click(element_id: &str) {
         }
         "v ---> dd.mm.yyyy" => {
             get_element_by_id("div_common_era").set_class_name("div_cell");
-            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_element_by_id("div_varweek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
         }
         "mm/dd/yyyy ---> v" => {
@@ -358,31 +385,31 @@ pub fn cnv_on_click(element_id: &str) {
         }
         "v ---> mm/dd/yyyy" => {
             get_element_by_id("div_common_era").set_class_name("div_cell");
-            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_element_by_id("div_varweek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
         }
         "HH:MM 24 ---> md" => {
             get_element_by_id("div_colon").set_class_name("div_cell");
         }
         "md ---> HH:MM 24" => {
-            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_element_by_id("div_varweek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
-            get_html_element_by_id("div_veek").set_inner_text("m");
+            get_html_element_by_id("div_varweek").set_inner_text("m");
             get_html_element_by_id("div_day").set_inner_text("d");
         }
         "HH:MM 12 ---> md" => {
             get_element_by_id("div_colon").set_class_name("div_cell");
             get_element_by_id("div_common_era").set_class_name("div_cell");
-            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_element_by_id("div_varweek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
             get_html_element_by_id("div_common_era").set_inner_text("A");
-            get_html_element_by_id("div_veek").set_inner_text("P");
+            get_html_element_by_id("div_varweek").set_inner_text("P");
             get_html_element_by_id("div_day").set_inner_text("M");
         }
         "md ---> HH:MM 12" => {
-            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_element_by_id("div_varweek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
-            get_html_element_by_id("div_veek").set_inner_text("m");
+            get_html_element_by_id("div_varweek").set_inner_text("m");
             get_html_element_by_id("div_day").set_inner_text("d");
         }
         "seconds ---> μd" => {
@@ -392,9 +419,9 @@ pub fn cnv_on_click(element_id: &str) {
         "μd ---> seconds" => {
             get_element_by_id("div_now").set_class_name("div_cell cell_disabled");
             get_element_by_id("div_dot").set_class_name("div_cell");
-            get_element_by_id("div_veek").set_class_name("div_cell");
+            get_element_by_id("div_varweek").set_class_name("div_cell");
             get_element_by_id("div_day").set_class_name("div_cell");
-            get_html_element_by_id("div_veek").set_inner_text("μ");
+            get_html_element_by_id("div_varweek").set_inner_text("μ");
             get_html_element_by_id("div_day").set_inner_text("d");
         }
         _ => set_text("div_output", &format!("?? {}", conversion)),
