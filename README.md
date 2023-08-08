@@ -9,6 +9,9 @@
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
+![status](https://img.shields.io/badge/maintained-green) 
+![status](https://img.shields.io/badge/ready_for_use-green) 
+
 [comment]: # (lmake_lines_of_code start)
 [![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-454-green.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 [![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-27-blue.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
