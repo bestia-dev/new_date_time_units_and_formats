@@ -1,5 +1,3 @@
-[//]: # (auto_md_to_doc_comments segment start A)
-
 # new_date_time_units_and_formats
 
 [//]: # (auto_cargo_toml_to_md start)
@@ -270,3 +268,4 @@ So I can drink a free beer for your health :-)
 [//github.com/bestia-dev](https://github.com/bestia-dev)  
 [//bestiadev.substack.com](https://bestiadev.substack.com)  
 [//youtube.com/@bestia-dev-tutorials](https://youtube.com/@bestia-dev-tutorials)  
+e.com/@bestia-dev-tutorials](https://youtube.com/@bestia-dev-tutorials)  
