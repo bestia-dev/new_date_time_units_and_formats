@@ -1,25 +1,25 @@
-[comment]: # (lmake_md_to_doc_comments segment start A)
+[//]: # (auto_md_to_doc_comments segment start A)
 
 # new_date_time_units_and_formats
 
-[comment]: # (lmake_cargo_toml_to_md start)
+[//]: # (auto_cargo_toml_to_md start)
 
 **my proposal for a new date time units and formats**  
 ***version: 2021.205.1219  date: 2021-02-05 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/new_date_time_units_and_formats)***  
 
-[comment]: # (lmake_cargo_toml_to_md end)
+[//]: # (auto_cargo_toml_to_md end)
 
  ![maintained](https://img.shields.io/badge/maintained-green)
  ![ready_for_use](https://img.shields.io/badge/ready_for_use-green)
 
-[comment]: # (lmake_lines_of_code start)
+[//]: # (auto_lines_of_code start)
 [![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-454-green.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 [![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-27-blue.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 [![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-18-purple.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-0-orange.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 
-[comment]: # (lmake_lines_of_code end)
+[//]: # (auto_lines_of_code end)
 
  [![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/blob/master/LICENSE)
  [![Rust](https://github.com/bestia-dev/new_date_time_units_and_formats/workflows/RustAction/badge.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
@@ -241,7 +241,7 @@ example: 1.1.2021 = 2021c 01v 1d,  11.3.2021 = 2021c 10v 7d
 
 Install some utilities:  
 `cargo install cargo-make`  
-`cargo install lmake_version_from_date`  
+`cargo install auto_version_from_date`  
 `cargo install basic-http-server`  
 Run  
 `cargo make` - for help  
