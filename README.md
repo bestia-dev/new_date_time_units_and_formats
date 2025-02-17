@@ -10,9 +10,6 @@
 
 [//]: # (auto_cargo_toml_to_md end)
 
- ![maintained](https://img.shields.io/badge/maintained-green)
- ![ready_for_use](https://img.shields.io/badge/ready_for_use-green)
-
 [//]: # (auto_lines_of_code start)
 [![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-454-green.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
 [![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-27-blue.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
@@ -22,7 +19,9 @@
 
 [//]: # (auto_lines_of_code end)
 
- [![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/blob/master/LICENSE)
+ ![maintained](https://img.shields.io/badge/maintained-green)
+ ![ready_for_use](https://img.shields.io/badge/ready_for_use-green)
+ ![License](https://img.shields.io/badge/license-MIT-blue.svg)
  [![Rust](https://github.com/bestia-dev/new_date_time_units_and_formats/workflows/rust_fmt_auto_build_test/badge.svg)](https://github.com/bestia-dev/new_date_time_units_and_formats/)
  ![new_date_time_units_and_formats](https://bestia.dev/webpage_hit_counter/get_svg_image/60475841.svg)
 
